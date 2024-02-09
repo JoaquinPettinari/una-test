@@ -1,12 +1,14 @@
 import "./App.css";
-import Header from "./components/Header";
-import InputTest from "./components/InputTest";
+import Header from "./components/Header/Header";
+import InputTest from "./components/InputTest/InputTest";
+import DocSection from "./components/DocSection/DocSection";
 
 function App() {
   return (
     <>
       <Header />
       <InputTest />
+      <DocSection />
     </>
   );
 }

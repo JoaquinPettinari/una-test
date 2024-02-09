@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { validateUrl } from "../utils/link";
+import { validateUrl } from "../../utils/link";
 
 const InputTest = () => {
   const [website, setWebsite] = useState({ link: "", isValid: true });

@@ -1,4 +1,4 @@
-import UnahurLogo from "../assets/iso_unahur.png";
+import UnahurLogo from "../../assets/iso_unahur.png";
 
 const Header = () => {
   return (
