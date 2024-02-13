@@ -2,7 +2,6 @@ import Beginner from "../../assets/0-beginner.svg";
 import Card from "./Card";
 import Title from "./Title";
 import Bookshelf from "../../assets/bookshelf.svg";
-
 const DocSection = () => {
   return (
     <section className="max-w-7xl mx-auto mt-20">
@@ -10,39 +9,40 @@ const DocSection = () => {
         <img src={Beginner} alt="Beginner icon" className="mr-3" />
         <Title title="Guia para iniciar en Accesibilidad Web" />
       </div>
-      <div className="grid grid-cols-2 grid-rows-2 gap-4 mt-10">
+      <div className="grid lg:grid-cols-2 lg:grid-rows-2 gap-4 mt-10">
         <Card
           icon={Bookshelf}
           title="Introducción a las Pautas de Accesibilidad para el Contenido Web (WCAG)"
           link="https://www.w3.org/WAI/standards-guidelines/wcag/es"
         >
-          <p className="text-lg">
-            Se desarrollan en cooperación con personas y organizaciones de todo
-            el mundo, con el fin de ofrecer un estándar único y compartido que
-            satisfaga las necesidades de las personas, organizaciones y
-            gobiernos a nivel internacional.
-          </p>
+          <>
+            <p className="text-lg">
+              Se desarrollan en cooperación con personas y organizaciones de
+              todo el mundo, con el fin de ofrecer un estándar único y
+              compartido que satisfaga las necesidades de las personas,
+              organizaciones y gobiernos a nivel internacional.
+            </p>
+            <p>
+              Las pautas de accesibilidad web internacionalmente adoptadas son
+              las definidas por la W3C y se denominan en castellano: "Pautas de
+              Accesibilidad de Contenido Web 2.0", WCAG 2.0 por sus siglas en
+              inglés.
+            </p>
+            <br />
+            <p>
+              La versión original y normativa en inglés se denomina, "Web
+              Content Accessibility Guidelines (WCAG) 2.0". Las WCAG 2.0 se han
+              convertido además en el estándar internacional ISO/IEC 40500:2012.
+            </p>
+          </>
         </Card>
         <div className="row-span-2">
           <Card
             icon={Bookshelf}
-            title="W3C"
+            title="¿Qué pautas de accesibilidad web existen a nivel internacional?"
             link="https://www.w3.org/WAI/standards-guidelines/wcag/es"
           >
             <>
-              <p>
-                Las pautas de accesibilidad web internacionalmente adoptadas son
-                las definidas por la W3C y se denominan en castellano: "Pautas
-                de Accesibilidad de Contenido Web 2.0", WCAG 2.0 por sus siglas
-                en inglés.
-              </p>
-              <br />
-              <p>
-                La versión original y normativa en inglés se denomina, "Web
-                Content Accessibility Guidelines (WCAG) 2.0". Las WCAG 2.0 se
-                han convertido además en el estándar internacional ISO/IEC
-                40500:2012.
-              </p>
               <br />
               <p>
                 El contenido de las WCAG 2.0 se estructura a partir de cuatro
@@ -52,19 +52,19 @@ const DocSection = () => {
               <br />
               <ul>
                 <li>
-                  <b>Principios:</b> son cuatro principios que proporcionan los
+                  <b>Principios:</b> Son cuatro principios que proporcionan los
                   fundamentos de la accesibilidad web, a saber: perceptible,
                   operable, comprensible y robusto.
                 </li>
                 <li>
-                  <b>Pautas:</b>para cada uno de los cuatro principios se han
+                  <b>Pautas:</b> Para cada uno de los cuatro principios se han
                   definido pautas. En total son doce pautas que poseen un nivel
                   de abstracción menor que los principios, aunque no son
                   totalmente verificables como sí lo son los criterios de
                   conformidad.
                 </li>
                 <li>
-                  <b>Criterios de conformidad:</b> para cada pauta se
+                  <b>Criterios de conformidad:</b> Para cada pauta se
                   proporcionan criterios de conformidad verificables que
                   permiten emplear las WCAG 2.0 en la práctica. Con el fin de
                   cubrir las diferentes necesidades de las personas que navegan
@@ -89,6 +89,15 @@ const DocSection = () => {
                 cada verificación los siguientes: “cumple”, “no cumple”, “no
                 aplica”.
               </p>
+              <ul>
+                <li>
+                  <b>Técnicas suficientes y recomendables:</b> las técnicas son
+                  informativas y se agrupan en dos categorías, aquellas que son
+                  suficientes para satisfacer los criterios de conformidad y
+                  aquellas que son recomendables. Es decir, estas técnicas
+                  orientan acerca de cómo cumplir con las pautas.
+                </li>
+              </ul>
             </>
           </Card>
         </div>

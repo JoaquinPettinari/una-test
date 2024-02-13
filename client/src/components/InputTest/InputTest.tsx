@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { validateUrl } from "../../utils/link";
+import { useNavigate } from "react-router-dom";
 
 const InputTest = () => {
   const [website, setWebsite] = useState({ link: "", isValid: true });
-
+  const navigate = useNavigate();
   const validateWeb = () => {
     const isValid = validateUrl(website.link);
     setWebsite((prevState) => ({
@@ -11,10 +12,12 @@ const InputTest = () => {
       isValid,
     }));
     if (isValid) {
-      console.log("redirect");
+      navigate(`analizar?page=${encodeURIComponent(website.link)}`);
       return;
     }
-    console.log("not valid");
+    console.log("Not valid");
+
+    setWebsite((prevState) => ({ ...prevState, isValid: false }));
   };
   return (
     <main className="w-5/6 lg:max-w-96 m-auto mt-7">
@@ -48,7 +51,7 @@ const InputTest = () => {
           className="bg-[--primary-green] border-2 duration-300 text-white p-5 rounded-md text-lg font-bold hover:bg-transparent hover:text-[--primary-green] hover:border-[--primary-green] "
           onClick={validateWeb}
         >
-          Evaluar
+          Analizar
         </button>
       </div>
     </main>

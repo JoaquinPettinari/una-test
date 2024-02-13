@@ -7,8 +7,10 @@ function App() {
   return (
     <>
       <Header />
-      <InputTest />
-      <DocSection />
+      <div className="p-5">
+        <InputTest />
+        <DocSection />
+      </div>
     </>
   );
 }
