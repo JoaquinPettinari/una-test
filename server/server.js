@@ -3,6 +3,7 @@ const app = express();
 const cors = require("cors");
 const pa11y = require("pa11y");
 const bodyParser = require("body-parser");
+const { isAccessible, countIssuesByType } = require("./utils.js/pa11y");
 
 app.use(bodyParser.json());
 app.use(cors());
@@ -15,7 +16,11 @@ app.post("/analizar", async (req, res) => {
       timeout: 30000,
     });
 
-    res.json({ data: pa11yResponse, ok: true });
+    const issues = pa11yResponse.issues;
+    const issueCountByType = countIssuesByType(issues);
+    const accessible = isAccessible(issues);
+
+    res.json({ data: pa11yResponse, ok: true, issueCountByType, accessible });
     console.log("Finish fetching");
   } catch (error) {
     if (error.name === "TimeoutError") {

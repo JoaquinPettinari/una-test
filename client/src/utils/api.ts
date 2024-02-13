@@ -2,12 +2,14 @@ interface Pa11y {
   data: {
     documentTitle: string;
     pageUrl: string;
-    issues: Issues[];
+    issues: Issue[];
   };
   ok: boolean;
+  countIssuesType: IssueType;
+  accessible: boolean;
 }
 
-interface Issues {
+interface Issue {
   code: string;
   type: string;
   typeCode: number;
@@ -17,6 +19,19 @@ interface Issues {
   runner: string;
   runnerExtras: unknown;
 }
+
+interface IssueType {
+  error: number;
+  warning: number;
+  notice: number;
+}
+
+const defaultResponse = {
+  data: { documentTitle: "", pageUrl: "", issues: [] },
+  ok: false,
+  countIssuesType: { error: 0, warning: 0, notice: 0 },
+  accessible: false,
+};
 
 export const fetchPa11yApi = async (url: string): Promise<Pa11y> => {
   const body = {
@@ -32,7 +47,7 @@ export const fetchPa11yApi = async (url: string): Promise<Pa11y> => {
   });
 
   if (!response.ok) {
-    return { data: { documentTitle: "", pageUrl: "", issues: [] }, ok: false };
+    return defaultResponse;
   }
 
   const results: Pa11y = await response.json();
