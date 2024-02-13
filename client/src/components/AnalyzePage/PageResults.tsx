@@ -48,8 +48,9 @@ function PageResults({ pa11yResults }: PageResultsProps) {
         ))}
       </div>
       <div className="w-full flex flex-col mt-4 ">
-        {data.issues.map((issue) => (
+        {data.issues.map((issue, index) => (
           <div
+            key={index}
             className="border-2 mb-4 p-4 bg-white text-start"
             style={{ borderColor: codeTypeColor[issue.type] }}
           >

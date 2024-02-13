@@ -23,7 +23,6 @@ const InputTest = ({ pageUrl }: InputTestProps) => {
       navigate(`analizar?page=${encodeURIComponent(website.link)}`);
       return;
     }
-    console.log("Not valid");
 
     setWebsite((prevState) => ({ ...prevState, isValid: false }));
   };
@@ -51,7 +50,10 @@ const InputTest = ({ pageUrl }: InputTestProps) => {
           placeholder="unahur.edu.ar"
         />
       </div>
-      <div className="w-full mt-10">
+      {!website.isValid && (
+        <h3 className="text-xl text-red-600 mt-2">Url inválida</h3>
+      )}
+      <div className="w-full mt-6">
         <button
           className="bg-[--primary-green] border-2 duration-300 text-white p-5 rounded-md text-lg font-bold hover:bg-transparent hover:text-[--primary-green] hover:border-[--primary-green] "
           onClick={validateWeb}
