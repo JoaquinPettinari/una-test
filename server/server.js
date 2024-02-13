@@ -8,26 +8,27 @@ app.use(bodyParser.json());
 app.use(cors());
 
 app.post("/analizar", async (req, res) => {
-  const url = req.body.url;
+  const url = "https://unahur.edu.ar" || req.body.url;
   console.log("Fetching...");
   try {
     const pa11yResponse = await pa11y(url, {
-      chromeLaunchConfig: { ignoreHTTPSErrors: false },
+      timeout: 30000,
     });
 
-    res.json({ data: pa11yResponse });
+    res.json({ data: pa11yResponse, ok: true });
     console.log("Finish fetching");
   } catch (error) {
     if (error.name === "TimeoutError") {
       console.error("El análisis de la página ha tardado demasiado tiempo.");
       res.status(500).json({
         error: "El análisis de la página ha tardado demasiado tiempo.",
+        ok: false,
       });
     } else {
       console.error("Error durante el análisis de la página:", error);
       res
         .status(500)
-        .json({ error: "Error durante el análisis de la página." });
+        .json({ error: "Error durante el análisis de la página.", ok: false });
     }
   }
 });
