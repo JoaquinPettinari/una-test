@@ -5,6 +5,12 @@ interface PageResultsProps {
   pa11yResults: Pa11y;
 }
 
+const codeTypeColor: any = {
+  error: "red",
+  warning: "#EED202",
+  notice: "#000080",
+};
+
 function PageResults({ pa11yResults }: PageResultsProps) {
   const { issueCountByType, data } = pa11yResults;
   const { error, warning, notice } = issueCountByType;
@@ -13,17 +19,17 @@ function PageResults({ pa11yResults }: PageResultsProps) {
       {
         label: "ERRORES",
         amount: error,
-        color: "red",
+        color: codeTypeColor.error,
       },
       {
         label: "ADVERTENCIAS",
         amount: warning,
-        color: "#EED202",
+        color: codeTypeColor.warning,
       },
       {
         label: "OBSERVACIONES",
         amount: notice,
-        color: "#000080",
+        color: codeTypeColor.notice,
       },
     ];
   }, [issueCountByType]);
@@ -41,9 +47,23 @@ function PageResults({ pa11yResults }: PageResultsProps) {
           </div>
         ))}
       </div>
-      <div className="w-full flex flex-col ">
+      <div className="w-full flex flex-col mt-4 ">
         {data.issues.map((issue) => (
-          <div>{issue.message}</div>
+          <div
+            className="border-2 mb-4 p-4 bg-white text-start"
+            style={{ borderColor: codeTypeColor[issue.type] }}
+          >
+            <h2 className="text-lg mb-2">
+              <span className="uppercase font-bold">{issue.type}</span>:{" "}
+              {issue.message}
+            </h2>
+            <hr />
+            <div className="mt-3 text-gray-500">
+              <h5 className="overflow-hidden text-ellipsis">{issue.context}</h5>
+              <br />
+              <h5>{issue.code}</h5>
+            </div>
+          </div>
         ))}
       </div>
     </div>
