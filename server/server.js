@@ -18,9 +18,15 @@ app.post("/analizar", async (req, res) => {
 
     const issues = pa11yResponse.issues;
     const issueCountByType = countIssuesByType(issues);
-    const accessible = isAccessible(issues);
+    const { countAprovedIssues, isAccessible } = isAccessible(issues);
 
-    res.json({ data: pa11yResponse, ok: true, issueCountByType, accessible });
+    res.json({
+      data: pa11yResponse,
+      ok: true,
+      issueCountByType,
+      accessible: isAccessible,
+      countAprovedIssues,
+    });
     console.log("Finish fetching");
   } catch (error) {
     if (error.name === "TimeoutError") {

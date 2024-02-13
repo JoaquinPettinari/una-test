@@ -12,7 +12,10 @@ function countIssuesByType(issues) {
 
 function isAccessible(issues) {
   const uniqueCodes = new Set(issues.map((issue) => issue.code));
-  return uniqueCodes.size <= 8;
+  return {
+    isAccessible: uniqueCodes.size <= 8,
+    countAprovedIssues: 38 - uniqueCodes.size,
+  };
 }
 
 module.exports = {

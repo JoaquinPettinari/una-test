@@ -1,12 +1,13 @@
-interface Pa11y {
+export interface Pa11y {
   data: {
     documentTitle: string;
     pageUrl: string;
     issues: Issue[];
   };
   ok: boolean;
-  countIssuesType: IssueType;
+  issueCountByType: IssueType;
   accessible: boolean;
+  countAprovedIssues: number;
 }
 
 interface Issue {
@@ -26,11 +27,12 @@ interface IssueType {
   notice: number;
 }
 
-const defaultResponse = {
+export const defaultResponse = {
   data: { documentTitle: "", pageUrl: "", issues: [] },
   ok: false,
-  countIssuesType: { error: 0, warning: 0, notice: 0 },
+  issueCountByType: { error: 0, warning: 0, notice: 0 },
   accessible: false,
+  countAprovedIssues: 0,
 };
 
 export const fetchPa11yApi = async (url: string): Promise<Pa11y> => {

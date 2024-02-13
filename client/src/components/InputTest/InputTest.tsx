@@ -2,8 +2,16 @@ import { useState } from "react";
 import { validateUrl } from "../../utils/link";
 import { useNavigate } from "react-router-dom";
 
-const InputTest = () => {
-  const [website, setWebsite] = useState({ link: "", isValid: true });
+interface InputTestProps {
+  pageUrl?: string;
+}
+
+const InputTest = ({ pageUrl }: InputTestProps) => {
+  const [website, setWebsite] = useState({
+    link: pageUrl || "",
+    isValid: true,
+  });
+
   const navigate = useNavigate();
   const validateWeb = () => {
     const isValid = validateUrl(website.link);
@@ -28,21 +36,18 @@ const InputTest = () => {
         Enlace a tu web
       </label>
       <div className="relative mt-2 rounded-md shadow-sm">
-        <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-          <span className="text-gray-500 sm:text-sm">https://</span>
-        </div>
         <input
           type="text"
           name="price"
           id="price"
-          value={website.link}
+          defaultValue={pageUrl}
           onChange={(event) =>
             setWebsite((prevState) => ({
               ...prevState,
               link: event.target.value,
             }))
           }
-          className="block w-full rounded-md border-0 py-1.5 pl-20 md:pl-16 pr-5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+          className="block w-full rounded-md border-0 py-1.5 pl-4 pr-5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
           placeholder="unahur.edu.ar"
         />
       </div>

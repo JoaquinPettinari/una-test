@@ -37,6 +37,15 @@
 .none {
   display: none;
 }
+
+.isAccessible {
+  border: 2px solid green;
+}
+
+.notAccessible {
+  border: 2px solid red;
+}
+
 @keyframes l15 {
   100% {
     transform: rotate(1turn);
