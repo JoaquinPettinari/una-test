@@ -1,3 +1,5 @@
+import { apiResult } from "./mockResult";
+
 export interface Pa11y {
   data: {
     documentTitle: string;
@@ -7,6 +9,7 @@ export interface Pa11y {
   ok: boolean;
   issueCountByType: IssueType;
   accessible: boolean;
+  error?: string;
   countAprovedIssues: number;
 }
 
@@ -33,24 +36,27 @@ export const defaultResponse = {
   issueCountByType: { error: 0, warning: 0, notice: 0 },
   accessible: false,
   countAprovedIssues: 0,
+  error: "",
 };
 
 export const fetchPa11yApi = async (url: string): Promise<Pa11y> => {
+  const isTesting = import.meta.env.DEV;
+  const useMock = import.meta.env.VITE_USE_MOCK;
+
+  if (isTesting && useMock === "true") {
+    return apiResult;
+  }
   const body = {
     url,
   };
 
-  const response = await fetch("http://localhost:5000/analizar", {
+  const response = await fetch(`${import.meta.env.VITE_URL}/analizar`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
     body: JSON.stringify(body),
   });
-
-  if (!response.ok) {
-    return defaultResponse;
-  }
 
   const results: Pa11y = await response.json();
   return results;

@@ -20,7 +20,7 @@ const notAccessibilityPage = {
   class: "notAccessible",
   title: "No es accesible",
   subtitle:
-    "No se cumplió con el mínimo de 30 criterios de acuerdo con la Disposición ONTI Nº6/2019 teniendo solamente %criterios cumplidos",
+    "No se cumplió con el mínimo de 30 criterios de acuerdo con la Disposición ONTI Nº6/2019 teniendo solamente %criterios criterios cumplidos",
 };
 
 function Resume({ isAccessible, countAprovedIssues }: ResumeProps) {

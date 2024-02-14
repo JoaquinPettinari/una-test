@@ -4,9 +4,10 @@ import { useNavigate } from "react-router-dom";
 
 interface InputTestProps {
   pageUrl?: string;
+  errorMessage?: string;
 }
 
-const InputTest = ({ pageUrl }: InputTestProps) => {
+const InputTest = ({ pageUrl, errorMessage }: InputTestProps) => {
   const [website, setWebsite] = useState({
     link: pageUrl || "",
     isValid: true,
@@ -50,9 +51,8 @@ const InputTest = ({ pageUrl }: InputTestProps) => {
           placeholder="unahur.edu.ar"
         />
       </div>
-      {!website.isValid && (
-        <h3 className="text-xl text-red-600 mt-2">Url inválida</h3>
-      )}
+      {!website.isValid && <ErrorMessage label={"Url inválida"} />}
+      {errorMessage && <ErrorMessage label={errorMessage} />}
       <div className="w-full mt-6">
         <button
           className="bg-[--primary-green] border-2 duration-300 text-white p-5 rounded-md text-lg font-bold hover:bg-transparent hover:text-[--primary-green] hover:border-[--primary-green] "
@@ -64,5 +64,9 @@ const InputTest = ({ pageUrl }: InputTestProps) => {
     </main>
   );
 };
+
+const ErrorMessage = ({ label }: { label: string }) => (
+  <h3 className="text-xl text-red-600 mt-2">{label}</h3>
+);
 
 export default InputTest;

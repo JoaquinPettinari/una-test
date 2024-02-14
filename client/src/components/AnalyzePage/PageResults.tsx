@@ -37,8 +37,9 @@ function PageResults({ pa11yResults }: PageResultsProps) {
   return (
     <div className="max-w-3xl m-auto mt-10">
       <div className="w-full grid grid-cols-1 gap-3 lg:grid-cols-3">
-        {issuesResume.map(({ label, amount, color }) => (
+        {issuesResume.map(({ label, amount, color }, index) => (
           <div
+            key={index}
             className="border-2 w-full rounded-md p-3"
             style={{ borderColor: color }}
           >
