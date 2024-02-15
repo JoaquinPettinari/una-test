@@ -5,7 +5,7 @@ import { useDebouncedCallback } from "use-debounce";
 
 function useAnalyzePage() {
   const location = useLocation();
-  const urlParam = new URLSearchParams(location.search).get("page");
+  const urlParam = new URLSearchParams(location.search).get("url");
   const [pa11yResults, setPa11yResultas] = useState<Pa11y>(defaultResponse);
   const [loading, setLoading] = useState(true);
 

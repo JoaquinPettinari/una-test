@@ -46,17 +46,16 @@ export const fetchPa11yApi = async (url: string): Promise<Pa11y> => {
   if (isTesting && useMock === "true") {
     return apiResult;
   }
-  const body = {
-    url,
-  };
 
-  const response = await fetch(`${import.meta.env.VITE_URL}/analizar`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(body),
-  });
+  const response = await fetch(
+    `${import.meta.env.VITE_URL}/analizar?url=${url}`,
+    {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }
+  );
 
   const results: Pa11y = await response.json();
   return results;

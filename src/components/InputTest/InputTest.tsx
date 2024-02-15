@@ -21,7 +21,7 @@ const InputTest = ({ pageUrl, errorMessage }: InputTestProps) => {
       isValid,
     }));
     if (isValid) {
-      navigate(`analizar?page=${encodeURIComponent(website.link)}`);
+      navigate(`/analizar?url=${website.link}`);
       return;
     }
 
