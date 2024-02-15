@@ -47,15 +47,18 @@ export const fetchPa11yApi = async (url: string): Promise<Pa11y> => {
     return apiResult;
   }
 
-  const response = await fetch(
-    `${import.meta.env.VITE_URL}/analizar?url=${url}`,
-    {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    }
-  );
+  const body = {
+    url,
+  };
+
+  const response = await fetch(`${import.meta.env.VITE_URL}/analizar`, {
+    method: "POST",
+    body: JSON.stringify(body),
+    headers: {
+      "Content-Type": "application/json",
+      "Access-Control-Allow-Origin": "*",
+    },
+  });
 
   const results: Pa11y = await response.json();
   return results;
