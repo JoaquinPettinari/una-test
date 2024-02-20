@@ -54,6 +54,7 @@ export const fetchPa11yApi = async (url: string): Promise<Pa11y> => {
   const response = await fetch(`${import.meta.env.VITE_URL}/analizar`, {
     method: "POST",
     body: JSON.stringify(body),
+    mode: "no-cors",
     headers: {
       "Content-Type": "application/json",
       "Access-Control-Allow-Origin": "*",
