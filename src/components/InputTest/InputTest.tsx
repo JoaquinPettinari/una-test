@@ -31,7 +31,7 @@ const InputTest = ({ pageUrl, errorMessage }: InputTestProps) => {
     <main className="w-5/6 lg:max-w-96 m-auto mt-7">
       <form onSubmit={validateWeb}>
         <label
-          htmlFor="price"
+          htmlFor="url"
           className="block text-lg font-medium leading-6 text-gray-900"
         >
           Enlace a tu web
@@ -39,8 +39,8 @@ const InputTest = ({ pageUrl, errorMessage }: InputTestProps) => {
         <div className="relative mt-2 rounded-md shadow-sm">
           <input
             type="text"
-            name="price"
-            id="price"
+            name="url"
+            id="url"
             defaultValue={pageUrl}
             onChange={(event) =>
               setWebsite((prevState) => ({
