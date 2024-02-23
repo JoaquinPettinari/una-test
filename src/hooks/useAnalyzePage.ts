@@ -13,7 +13,7 @@ function useAnalyzePage() {
     const response = await fetchPa11yApi(value);
     setPa11yResultas(response);
     setLoading(false);
-  }, 2000);
+  }, 800);
 
   useEffect(() => {
     setLoading(true);
