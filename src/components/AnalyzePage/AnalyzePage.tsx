@@ -6,7 +6,6 @@ import PageResults from "./PageResults";
 
 export default function AnalyzePage() {
   const { loading, pa11yResults } = useAnalyzePage();
-  console.log(pa11yResults);
 
   return (
     <div className="h-full flex flex-col">
