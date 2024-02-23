@@ -16,6 +16,7 @@ function useAnalyzePage() {
   }, 2000);
 
   useEffect(() => {
+    setLoading(true);
     debounced(urlParam);
   }, [urlParam, debounced]);
 

@@ -11,6 +11,7 @@ const codeTypeColor: any = {
   notice: "#000080",
 };
 
+// eslint-disable-next-line react-refresh/only-export-components
 function PageResults({ pa11yResults }: PageResultsProps) {
   const { issueCountByType, data } = pa11yResults;
   const { error, warning, notice } = issueCountByType;
@@ -32,11 +33,11 @@ function PageResults({ pa11yResults }: PageResultsProps) {
         color: codeTypeColor.notice,
       },
     ];
-  }, [issueCountByType]);
+  }, [error, warning, notice]);
 
   return (
-    <div className="max-w-3xl m-auto mt-10">
-      <div className="w-full grid grid-cols-1 gap-3 lg:grid-cols-3">
+    <div className="max-w-3xl m-auto mt-10 p-8 lg:p-0">
+      <div className="w-full grid grid-cols-1 gap-3 sm:grid-cols-3">
         {issuesResume.map(({ label, amount, color }, index) => (
           <div
             key={index}

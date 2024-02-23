@@ -21,7 +21,7 @@ const InputTest = ({ pageUrl, errorMessage }: InputTestProps) => {
       isValid,
     }));
     if (isValid) {
-      navigate(`/analizar?url=${website.link}`);
+      navigate(`/analizar?url=${website.link}`, { relative: "path" });
       return;
     }
 

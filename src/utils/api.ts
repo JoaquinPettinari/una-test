@@ -46,21 +46,28 @@ export const fetchPa11yApi = async (url: string): Promise<Pa11y> => {
   if (isTesting && useMock === "true") {
     return apiResult;
   }
+  try {
+    const response = await fetch(
+      `${import.meta.env.VITE_URL}/api/analizar?` +
+        new URLSearchParams({
+          url: url,
+        }),
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": "*",
+        },
+      }
+    );
 
-  const body = {
-    url,
-  };
-
-  const response = await fetch(`${import.meta.env.VITE_URL}/analizar`, {
-    method: "POST",
-    body: JSON.stringify(body),
-    mode: "no-cors",
-    headers: {
-      "Content-Type": "application/json",
-      "Access-Control-Allow-Origin": "*",
-    },
-  });
-
-  const results: Pa11y = await response.json();
-  return results;
+    const results: Pa11y = await response.json();
+    return results;
+  } catch (error) {
+    console.log(error);
+    return {
+      ...defaultResponse,
+      error: "Hubo un problema en el servidor: Timeout",
+    };
+  }
 };
