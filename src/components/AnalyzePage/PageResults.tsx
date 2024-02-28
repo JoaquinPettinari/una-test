@@ -2,6 +2,7 @@ import { memo } from "react";
 import { Pa11y } from "../../utils/api";
 import IssueResumeCard from "./IssueResumeCard";
 import { usePageResults } from "../../hooks/usePageResults";
+import Issue from "./Issue";
 
 interface PageResultsProps {
   pa11yResults: Pa11y;
@@ -22,25 +23,7 @@ function PageResults({ pa11yResults }: PageResultsProps) {
       <div className="w-full flex flex-col mt-10">
         {issues.map((issue, index) => {
           const border = colors[issue.type].border;
-          return (
-            <div
-              key={index}
-              className={`border-2 rounded-md mb-4 p-4 bg-white text-start ${border}`}
-            >
-              <h2 className="text-lg mb-2">
-                <span className="uppercase font-bold">{issue.type}</span>:{" "}
-                {issue.message}
-              </h2>
-              <hr />
-              <div className="mt-3 text-gray-500">
-                <h5 className="overflow-hidden text-ellipsis">
-                  {issue.context}
-                </h5>
-                <br />
-                <h5>{issue.code}</h5>
-              </div>
-            </div>
-          );
+          return <Issue border={border} issue={issue} key={index} />;
         })}
       </div>
     </div>
