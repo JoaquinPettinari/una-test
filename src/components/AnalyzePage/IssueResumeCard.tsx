@@ -29,7 +29,7 @@ function IssueResumeCard({
     >
       <h3
         className={`font-medium text-xl ${
-          color.selected ? "text-white" : "text-black"
+          color.selected ? "text-white" : "text-gray-700"
         }`}
       >
         {label}
