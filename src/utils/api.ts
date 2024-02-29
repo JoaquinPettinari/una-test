@@ -18,7 +18,7 @@ export interface Issue {
   type: string;
   typeCode: number;
   message: string;
-  context: string;
+  context: null | string;
   selector: string;
   runner: string;
   runnerExtras: unknown;
