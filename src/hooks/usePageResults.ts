@@ -80,11 +80,25 @@ function usePageResults(pa11yResults: Pa11y) {
     ],
     [colors, error, warning, notice]
   );
+
+  const downloadReport = () => {
+    const json = JSON.stringify(data);
+    const blob = new Blob([json], { type: "application/json" });
+    const url = window.URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = `Reporte_${data.pageUrl}.json`;
+    document.body.appendChild(a);
+    a.click();
+    window.URL.revokeObjectURL(url);
+  };
+
   return {
     onClickCard,
     resumeCards,
     colors,
     issues,
+    downloadReport,
   };
 }
 
