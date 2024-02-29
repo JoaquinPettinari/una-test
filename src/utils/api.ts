@@ -22,6 +22,7 @@ export interface Issue {
   selector: string;
   runner: string;
   runnerExtras: unknown;
+  guideLinks: string[];
 }
 
 interface IssueType {

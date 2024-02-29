@@ -33,8 +33,8 @@ function PageResults({ pa11yResults }: PageResultsProps) {
         )}
       </div>
       <div className="w-full grid grid-cols-1 gap-3 sm:grid-cols-3">
-        {resumeCards.map((props) => (
-          <IssueResumeCard {...props} onClickCard={onClickCard} />
+        {resumeCards.map((props, index) => (
+          <IssueResumeCard {...props} key={index} onClickCard={onClickCard} />
         ))}
       </div>
       <div className="w-full flex flex-col mt-10">

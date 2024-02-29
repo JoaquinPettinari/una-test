@@ -1,823 +1,396 @@
 export const apiResult = {
   data: {
-    documentTitle: "UNAHUR | UNIVERSIDAD NACIONAL DE HURLINGHAM",
-    pageUrl: "https://unahur.edu.ar/",
+    documentTitle: "Example Domain",
+    pageUrl: "http://example.com",
     issues: [
       {
-        code: "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
-        type: "warning",
-        typeCode: 2,
-        message:
-          "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4.42:1. Recommendation:  change background to #565658.",
-        context:
-          '<a href="https://unahur.edu.ar/guia-ingresantes/">Ingresantes</a>',
-        selector: "#menu-menu-unahur-2 > li:nth-child(13) > a",
+        code: "WCAG2AA.Principle2.Guideline2_4.2_4_2.H25.2",
+        type: "notice",
+        typeCode: 3,
+        message: "Check that the title element describes the document.",
+        context: "<title>Example Domain</title>",
+        selector: "html > head > title",
         runner: "htmlcs",
         runnerExtras: {},
+        guideLinks: ["https://www.w3.org/WAI/WCAG21/Techniques/html/H25"],
       },
       {
-        code: "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
-        type: "warning",
-        typeCode: 2,
+        code: "WCAG2AA.Principle3.Guideline3_1.3_1_1.H57.2",
+        type: "error",
+        typeCode: 1,
         message:
-          "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4.42:1. Recommendation:  change background to #565658.",
-        context:
-          '<a href="https://unahur.edu.ar/graduados-y-graduadas/">Graduados y graduadas</a>',
-        selector: "#menu-menu-unahur-2 > li:nth-child(14) > a",
+          "The html element should have a lang or xml:lang attribute which describes the language of the document.",
+        context: "<html><head>\n    <title>Example Domai...</html>",
+        selector: "html",
         runner: "htmlcs",
         runnerExtras: {},
+        guideLinks: ["https://www.w3.org/WAI/WCAG21/Techniques/html/H57"],
       },
       {
-        code: "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+        code: "WCAG2AA.Principle2.Guideline2_4.2_4_4.H77,H78,H79,H80,H81",
         type: "notice",
         typeCode: 3,
         message:
-          "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4.42:1. Recommendation:  change background to #565658.",
-        context: '<a href="https://docentes.unahur.edu.ar/">Docentes</a>',
-        selector: "#menu-menu-unahur-2 > li:nth-child(15) > a",
-        runner: "htmlcs",
-        runnerExtras: {},
-      },
-      {
-        code: "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
-        type: "error",
-        typeCode: 1,
-        message:
-          "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4.42:1. Recommendation:  change background to #565658.",
-        context: '<a href="https://campus.unahur.edu.ar/">Campus Virtual</a>',
-        selector: "#menu-menu-unahur-2 > li:nth-child(16) > a",
-        runner: "htmlcs",
-        runnerExtras: {},
-      },
-      {
-        code: "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
-        type: "error",
-        typeCode: 1,
-        message:
-          "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4.42:1. Recommendation:  change background to #565658.",
+          "Check that the link text combined with programmatically determined link context identifies the purpose of the link.",
         context:
-          '<a href="https://servicios.unahur.edu.ar/unahur3w/">SIU – Guaraní</a>',
-        selector: "#menu-menu-unahur-2 > li:nth-child(17) > a",
+          '<a href="https://www.iana.org/domains/example">More information...</a>',
+        selector: "html > body > div > p:nth-child(3) > a",
         runner: "htmlcs",
         runnerExtras: {},
+        guideLinks: [
+          "https://www.w3.org/WAI/WCAG21/Techniques/html/H77",
+          "https://www.w3.org/WAI/WCAG21/Techniques/html/H78",
+          "https://www.w3.org/WAI/WCAG21/Techniques/html/H79",
+          "https://www.w3.org/WAI/WCAG21/Techniques/html/H80",
+          "https://www.w3.org/WAI/WCAG21/Techniques/html/H81",
+        ],
       },
       {
-        code: "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
-        type: "error",
-        typeCode: 1,
+        code: "WCAG2AA.Principle1.Guideline1_3.1_3_2.G57",
+        type: "notice",
+        typeCode: 3,
         message:
-          "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4.42:1. Recommendation:  change background to #565658.",
-        context:
-          '<a href="https://unahur.edu.ar/calendario-academico/">Calendario Académico</a>',
-        selector: "#menu-menu-unahur-2 > li:nth-child(18) > a",
+          "Check that the content is ordered in a meaningful sequence when linearised, such as when style sheets are disabled.",
+        context: null,
+        selector: "",
         runner: "htmlcs",
         runnerExtras: {},
+        guideLinks: ["https://www.w3.org/WAI/WCAG21/Techniques/general/G57"],
       },
       {
-        code: "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
-        type: "error",
-        typeCode: 1,
+        code: "WCAG2AA.Principle1.Guideline1_3.1_3_3.G96",
+        type: "notice",
+        typeCode: 3,
         message:
-          "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4.42:1. Recommendation:  change background to #565658.",
-        context: '<a href="https://unahur.edu.ar/biblioteca/">Biblioteca</a>',
-        selector: "#menu-menu-unahur-2 > li:nth-child(19) > a",
+          "Where instructions are provided for understanding the content, do not rely on sensory characteristics alone (such as shape, size or location) to describe objects.",
+        context: null,
+        selector: "",
         runner: "htmlcs",
         runnerExtras: {},
+        guideLinks: ["https://www.w3.org/WAI/WCAG21/Techniques/general/G96"],
       },
       {
-        code: "WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.Button.Name",
-        type: "error",
-        typeCode: 1,
+        code: "WCAG2AA.Principle1.Guideline1_3.1_3_4.",
+        type: "notice",
+        typeCode: 3,
         message:
-          "This button element does not have a name available to an accessibility API. Valid names are: title undefined, element content, aria-label undefined, aria-labelledby undefined.",
-        context:
-          '<button type="button" class="et_pb_menu__icon et_pb_menu__search-button"></button>',
-        selector:
-          "#et-boc > header > div > div:nth-child(1) > div > div > div > div > div:nth-child(1) > button",
+          "Check that content does not restrict its view and operation to a single display orientation, such as portrait or landscape, unless a specific display orientation is essential.",
+        context: null,
+        selector: "",
         runner: "htmlcs",
         runnerExtras: {},
+        guideLinks: ["https://www.w3.org/TR/WCAG20/"],
       },
       {
-        code: "WCAG2AA.Principle3.Guideline3_2.3_2_2.H32.2",
-        type: "error",
-        typeCode: 1,
+        code: "WCAG2AA.Principle1.Guideline1_4.1_4_1.G14,G182",
+        type: "notice",
+        typeCode: 3,
         message:
-          'This form does not contain a submit button, which creates issues for those who cannot submit the form using the keyboard. Submit buttons are INPUT elements with type attribute "submit" or "image", or BUTTON elements with type "submit" or omitted/invalid.',
-        context:
-          '<form role="search" method="get" class="et_pb_menu__search-form" action="https://unahur.edu.ar/">\n\t\t\t\t\t\t<input type="search" cla...</form>',
-        selector:
-          "#et-boc > header > div > div:nth-child(1) > div > div > div > div > div:nth-child(2) > div > form",
+          "Check that any information conveyed using colour alone is also available in text, or through other visual cues.",
+        context: null,
+        selector: "",
         runner: "htmlcs",
         runnerExtras: {},
+        guideLinks: [
+          "https://www.w3.org/WAI/WCAG21/Techniques/general/G14",
+          "https://www.w3.org/WAI/WCAG21/Techniques/general/G182",
+        ],
       },
       {
-        code: "WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.Button.Name",
-        type: "error",
-        typeCode: 1,
+        code: "WCAG2AA.Principle1.Guideline1_4.1_4_4.G142",
+        type: "notice",
+        typeCode: 3,
         message:
-          "This button element does not have a name available to an accessibility API. Valid names are: title undefined, element content, aria-label undefined, aria-labelledby undefined.",
-        context:
-          '<button type="button" class="et_pb_menu__icon et_pb_menu__close-search-button"></button>',
-        selector:
-          "#et-boc > header > div > div:nth-child(1) > div > div > div > div > div:nth-child(2) > div > button",
+          "Check that text can be resized without assistive technology up to 200 percent without loss of content or functionality.",
+        context: null,
+        selector: "",
         runner: "htmlcs",
         runnerExtras: {},
+        guideLinks: ["https://www.w3.org/WAI/WCAG21/Techniques/general/G142"],
       },
       {
-        code: "WCAG2AA.Principle1.Guideline1_1.1_1_1.H67.1",
-        type: "error",
-        typeCode: 1,
+        code: "WCAG2AA.Principle1.Guideline1_4.1_4_10.C32,C31,C33,C38,SCR34,G206",
+        type: "notice",
+        typeCode: 3,
         message:
-          "Img element with empty alt text must have absent or empty title attribute.",
-        context:
-          '<img decoding="async" width="164" height="181" src="https://unahur.edu.ar/wp-content/uploads/2021/03/UNAHUR-1.png" alt="" title="UNAHUR" class="wp-image-834">',
-        selector:
-          "#et-boc > header > div > div:nth-child(2) > div > div > div:nth-child(1) > a > span > img",
+          "Check that content can be presented without loss of information or functionality, and without requiring scrolling in two dimensions for:     Vertical scrolling content at a width equivalent to 320 CSS pixels;     Horizontal scrolling content at a height equivalent to 256 CSS pixels;     Except for parts of the content which require two-dimensional layout for usage or meaning.",
+        context: null,
+        selector: "",
         runner: "htmlcs",
         runnerExtras: {},
+        guideLinks: [
+          "https://www.w3.org/WAI/WCAG21/Techniques/css/C32",
+          "https://www.w3.org/WAI/WCAG21/Techniques/css/C31",
+          "https://www.w3.org/WAI/WCAG21/Techniques/css/C33",
+          "https://www.w3.org/WAI/WCAG21/Techniques/css/C38",
+          "https://www.w3.org/WAI/WCAG21/Techniques/client-side-script/SCR34",
+          "https://www.w3.org/WAI/WCAG21/Techniques/general/G206",
+        ],
       },
       {
-        code: "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
-        type: "error",
-        typeCode: 1,
+        code: "WCAG2AA.Principle1.Guideline1_4.1_4_11.G195,G207,G18,G145,G174,F78",
+        type: "notice",
+        typeCode: 3,
         message:
-          "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 2.15:1. Recommendation:  change text colour to #676767.",
-        context:
-          '<p style="margin-top: -20px; color:rgb(158,158,158);">MENÚ\n\n\n </p>',
-        selector:
-          "#et-boc > header > div > div:nth-child(2) > div > div > div:nth-child(2) > div > p",
+          "Check that the visual presentation of the following have a contrast ratio of at least 3:1 against adjacent color(s):     User Interface Components: Visual information required to identify user interface components and states, except for inactive components or where the appearance of the component is determined by the user agent and not modified by the author;     Graphical Objects: Parts of graphics required to understand the content, except when a particular presentation of graphics is essential to the information being conveyed.",
+        context: null,
+        selector: "",
         runner: "htmlcs",
         runnerExtras: {},
+        guideLinks: [
+          "https://www.w3.org/WAI/WCAG21/Techniques/general/G195",
+          "https://www.w3.org/WAI/WCAG21/Techniques/general/G207",
+          "https://www.w3.org/WAI/WCAG21/Techniques/general/G18",
+          "https://www.w3.org/WAI/WCAG21/Techniques/general/G145",
+          "https://www.w3.org/WAI/WCAG21/Techniques/general/G174",
+          "https://www.w3.org/WAI/WCAG21/Techniques/failures/F78",
+        ],
       },
       {
-        code: "WCAG2AA.Principle1.Guideline1_1.1_1_1.H67.1",
-        type: "error",
-        typeCode: 1,
+        code: "WCAG2AA.Principle1.Guideline1_4.1_4_12.C36,C35",
+        type: "notice",
+        typeCode: 3,
         message:
-          "Img element with empty alt text must have absent or empty title attribute.",
-        context:
-          '<img fetchpriority="high" decoding="async" width="350" height="390" src="https://unahur.edu.ar/wp-content/uploads/2021/03/noti.png" alt="" title="noti" srcset="https://unahur.edu.ar/wp-content/uploads/2021/03/noti.png 350w, https://unahur.edu.ar/wp-c...',
-        selector:
-          "#et-boc > header > div > div:nth-child(2) > div > div > div:nth-child(3) > a > span > img",
+          "Check that no loss of content or functionality occurs by setting all of the following and by changing no other style property:              Line height (line spacing) to at least 1.5 times the font size;         Spacing following paragraphs to at least 2 times the font size;         Letter spacing (tracking) to at least 0.12 times the font size;         Word spacing to at least 0.16 times the font size.",
+        context: null,
+        selector: "",
         runner: "htmlcs",
         runnerExtras: {},
+        guideLinks: [
+          "https://www.w3.org/WAI/WCAG21/Techniques/css/C36",
+          "https://www.w3.org/WAI/WCAG21/Techniques/css/C35",
+        ],
       },
       {
-        code: "WCAG2AA.Principle1.Guideline1_1.1_1_1.H67.1",
-        type: "error",
-        typeCode: 1,
+        code: "WCAG2AA.Principle1.Guideline1_4.1_4_13.F95",
+        type: "notice",
+        typeCode: 3,
         message:
-          "Img element with empty alt text must have absent or empty title attribute.",
-        context:
-          '<img decoding="async" width="393" height="403" src="https://unahur.edu.ar/wp-content/uploads/2021/10/OFERTA_ACADEMICA_LOGO.png" alt="" title="OFERTA_ACADEMICA_LOGO" srcset="https://unahur.edu.ar/wp-content/uploads/2021/10/OFERTA_ACADEMICA_LOGO.png 39...',
-        selector:
-          "#et-boc > header > div > div:nth-child(2) > div > div > div:nth-child(4) > a > span > img",
+          "Check that where receiving and then removing pointer hover or keyboard focus triggers additional content to become visible and then hidden, the following are true:              Dismissable: A mechanism is available to dismiss the additional content without moving pointer hover or keyboard focus, unless the additional content communicates an input error or does not obscure or replace other content;         Hoverable: If pointer hover can trigger the additional content, then the pointer can be moved over the additional content without the additional content disappearing;         Persistent: The additional content remains visible until the hover or focus trigger is removed, the user dismisses it, or its information is no longer valid.",
+        context: null,
+        selector: "",
         runner: "htmlcs",
         runnerExtras: {},
+        guideLinks: ["https://www.w3.org/WAI/WCAG21/Techniques/failures/F95"],
       },
       {
-        code: "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
-        type: "error",
-        typeCode: 1,
+        code: "WCAG2AA.Principle2.Guideline2_1.2_1_4.",
+        type: "notice",
+        typeCode: 3,
         message:
-          "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 3.65:1. Recommendation:  change text colour to #585858.",
-        context: '<span class="pages">Página 1 de 149</span>',
-        selector:
-          "#noticias > div > div > div > div > div > div > div:nth-child(2) > span:nth-child(1)",
+          "Check that if a keyboard shortcut is implemented in content using only letter (including upper- and lower-case letters), punctuation, number, or symbol characters, then at least one of the following is true:              Turn off: A mechanism is available to turn the shortcut off;         Remap: A mechanism is available to remap the shortcut to use one or more non-printable keyboard characters (e.g. Ctrl, Alt, etc);         Active only on focus: The keyboard shortcut for a user interface component is only active when that component has focus.     ",
+        context: null,
+        selector: "",
         runner: "htmlcs",
         runnerExtras: {},
+        guideLinks: ["https://www.w3.org/TR/WCAG20/"],
       },
       {
-        code: "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
-        type: "error",
-        typeCode: 1,
+        code: "WCAG2AA.Principle2.Guideline2_2.2_2_2.SCR33,SCR22,G187,G152,G186,G191",
+        type: "notice",
+        typeCode: 3,
         message:
-          "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 3.65:1. Recommendation:  change text colour to #585858.",
-        context: '<span aria-current="page" class="current">1</span>',
-        selector:
-          "#noticias > div > div > div > div > div > div > div:nth-child(2) > span:nth-child(2)",
+          "If any part of the content moves, scrolls or blinks for more than 5 seconds, or auto-updates, check that there is a mechanism available to pause, stop, or hide the content.",
+        context: null,
+        selector: "",
         runner: "htmlcs",
         runnerExtras: {},
+        guideLinks: [
+          "https://www.w3.org/WAI/WCAG21/Techniques/client-side-script/SCR33",
+          "https://www.w3.org/WAI/WCAG21/Techniques/client-side-script/SCR22",
+          "https://www.w3.org/WAI/WCAG21/Techniques/general/G187",
+          "https://www.w3.org/WAI/WCAG21/Techniques/general/G152",
+          "https://www.w3.org/WAI/WCAG21/Techniques/general/G186",
+          "https://www.w3.org/WAI/WCAG21/Techniques/general/G191",
+        ],
       },
       {
-        code: "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
-        type: "error",
-        typeCode: 1,
+        code: "WCAG2AA.Principle2.Guideline2_3.2_3_1.G19,G176",
+        type: "notice",
+        typeCode: 3,
         message:
-          "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 1.75:1. Recommendation:  change text colour to #005b99.",
-        context:
-          '<a class="page larger" title="Página 2" href="https://unahur.edu.ar/page/2/?et_blog">2</a>',
-        selector:
-          "#noticias > div > div > div > div > div > div > div:nth-child(2) > a:nth-child(3)",
+          "Check that no component of the content flashes more than three times in any 1-second period, or that the size of any flashing area is sufficiently small.",
+        context: null,
+        selector: "",
         runner: "htmlcs",
         runnerExtras: {},
+        guideLinks: [
+          "https://www.w3.org/WAI/WCAG21/Techniques/general/G19",
+          "https://www.w3.org/WAI/WCAG21/Techniques/general/G176",
+        ],
       },
       {
-        code: "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
-        type: "error",
-        typeCode: 1,
+        code: "WCAG2AA.Principle2.Guideline2_4.2_4_1.G1,G123,G124,H69",
+        type: "notice",
+        typeCode: 3,
         message:
-          "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 1.75:1. Recommendation:  change text colour to #005b99.",
-        context:
-          '<a class="page larger" title="Página 3" href="https://unahur.edu.ar/page/3/?et_blog">3</a>',
-        selector:
-          "#noticias > div > div > div > div > div > div > div:nth-child(2) > a:nth-child(4)",
+          "Ensure that any common navigation elements can be bypassed; for instance, by use of skip links, header elements, or ARIA landmark roles.",
+        context: null,
+        selector: "",
         runner: "htmlcs",
         runnerExtras: {},
+        guideLinks: [
+          "https://www.w3.org/WAI/WCAG21/Techniques/general/G1",
+          "https://www.w3.org/WAI/WCAG21/Techniques/general/G123",
+          "https://www.w3.org/WAI/WCAG21/Techniques/general/G124",
+          "https://www.w3.org/WAI/WCAG21/Techniques/html/H69",
+        ],
       },
       {
-        code: "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
-        type: "error",
-        typeCode: 1,
+        code: "WCAG2AA.Principle2.Guideline2_4.2_4_5.G125,G64,G63,G161,G126,G185",
+        type: "notice",
+        typeCode: 3,
         message:
-          "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 1.75:1. Recommendation:  change text colour to #005b99.",
-        context:
-          '<a class="page larger" title="Página 4" href="https://unahur.edu.ar/page/4/?et_blog">4</a>',
-        selector:
-          "#noticias > div > div > div > div > div > div > div:nth-child(2) > a:nth-child(5)",
+          "If this Web page is not part of a linear process, check that there is more than one way of locating this Web page within a set of Web pages.",
+        context: null,
+        selector: "",
         runner: "htmlcs",
         runnerExtras: {},
+        guideLinks: [
+          "https://www.w3.org/WAI/WCAG21/Techniques/general/G125",
+          "https://www.w3.org/WAI/WCAG21/Techniques/general/G64",
+          "https://www.w3.org/WAI/WCAG21/Techniques/general/G63",
+          "https://www.w3.org/WAI/WCAG21/Techniques/general/G161",
+          "https://www.w3.org/WAI/WCAG21/Techniques/general/G126",
+          "https://www.w3.org/WAI/WCAG21/Techniques/general/G185",
+        ],
       },
       {
-        code: "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
-        type: "error",
-        typeCode: 1,
+        code: "WCAG2AA.Principle2.Guideline2_4.2_4_6.G130,G131",
+        type: "notice",
+        typeCode: 3,
+        message: "Check that headings and labels describe topic or purpose.",
+        context: null,
+        selector: "",
+        runner: "htmlcs",
+        runnerExtras: {},
+        guideLinks: [
+          "https://www.w3.org/WAI/WCAG21/Techniques/general/G130",
+          "https://www.w3.org/WAI/WCAG21/Techniques/general/G131",
+        ],
+      },
+      {
+        code: "WCAG2AA.Principle2.Guideline2_4.2_4_7.G149,G165,G195,C15,SCR31",
+        type: "notice",
+        typeCode: 3,
         message:
-          "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 1.75:1. Recommendation:  change text colour to #005b99.",
-        context:
-          '<a class="page larger" title="Página 5" href="https://unahur.edu.ar/page/5/?et_blog">5</a>',
-        selector:
-          "#noticias > div > div > div > div > div > div > div:nth-child(2) > a:nth-child(6)",
+          "Check that there is at least one mode of operation where the keyboard focus indicator can be visually located on user interface controls.",
+        context: null,
+        selector: "",
         runner: "htmlcs",
         runnerExtras: {},
+        guideLinks: [
+          "https://www.w3.org/WAI/WCAG21/Techniques/general/G149",
+          "https://www.w3.org/WAI/WCAG21/Techniques/general/G165",
+          "https://www.w3.org/WAI/WCAG21/Techniques/general/G195",
+          "https://www.w3.org/WAI/WCAG21/Techniques/css/C15",
+          "https://www.w3.org/WAI/WCAG21/Techniques/client-side-script/SCR31",
+        ],
       },
       {
-        code: "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
-        type: "error",
-        typeCode: 1,
+        code: "WCAG2AA.Principle2.Guideline2_5.2_5_1.",
+        type: "notice",
+        typeCode: 3,
         message:
-          "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 3.65:1. Recommendation:  change text colour to #585858.",
-        context: '<span class="extend">...</span>',
-        selector:
-          "#noticias > div > div > div > div > div > div > div:nth-child(2) > span:nth-child(7)",
+          "Check that all functionality that uses multipoint or path-based gestures for operation can be operated with a single pointer without a path-based gesture, unless a multipoint or path-based gesture is essential.",
+        context: null,
+        selector: "",
         runner: "htmlcs",
         runnerExtras: {},
+        guideLinks: ["https://www.w3.org/TR/WCAG20/"],
       },
       {
-        code: "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
-        type: "error",
-        typeCode: 1,
+        code: "WCAG2AA.Principle2.Guideline2_5.2_5_2.",
+        type: "notice",
+        typeCode: 3,
         message:
-          "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 1.75:1. Recommendation:  change text colour to #005b99.",
-        context:
-          '<a class="larger page" title="Página 10" href="https://unahur.edu.ar/page/10/?et_blog">10</a>',
-        selector:
-          "#noticias > div > div > div > div > div > div > div:nth-child(2) > a:nth-child(8)",
+          "Check that for functionality that can be operated using a single pointer, at least one of the following is true:         No Down-Event: The down-event of the pointer is not used to execute any part of the function;         Abort or Undo: Completion of the function is on the up-event, and a mechanism is available to abort the function before completion or to undo the function after completion;         Up Reversal: The up-event reverses any outcome of the preceding down-event;         Essential: Completing the function on the down-event is essential.",
+        context: null,
+        selector: "",
         runner: "htmlcs",
         runnerExtras: {},
+        guideLinks: ["https://www.w3.org/TR/WCAG20/"],
       },
       {
-        code: "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
-        type: "error",
-        typeCode: 1,
+        code: "WCAG2AA.Principle2.Guideline2_5.2_5_3.F96",
+        type: "notice",
+        typeCode: 3,
         message:
-          "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 1.75:1. Recommendation:  change text colour to #005b99.",
-        context:
-          '<a class="larger page" title="Página 20" href="https://unahur.edu.ar/page/20/?et_blog">20</a>',
-        selector:
-          "#noticias > div > div > div > div > div > div > div:nth-child(2) > a:nth-child(9)",
+          "Check that for user interface components with labels that include text or images of text, the name contains the text that is presented visually.",
+        context: null,
+        selector: "",
         runner: "htmlcs",
         runnerExtras: {},
+        guideLinks: ["https://www.w3.org/WAI/WCAG21/Techniques/failures/F96"],
       },
       {
-        code: "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
-        type: "error",
-        typeCode: 1,
+        code: "WCAG2AA.Principle2.Guideline2_5.2_5_4.",
+        type: "notice",
+        typeCode: 3,
         message:
-          "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 1.75:1. Recommendation:  change text colour to #005b99.",
-        context:
-          '<a class="larger page" title="Página 30" href="https://unahur.edu.ar/page/30/?et_blog">30</a>',
-        selector:
-          "#noticias > div > div > div > div > div > div > div:nth-child(2) > a:nth-child(10)",
+          "Check that functionality that can be operated by device motion or user motion can also be operated by user interface components and responding to the motion can be disabled to prevent accidental actuation, except when:              Supported Interface: The motion is used to operate functionality through an accessibility supported interface;         Essential: The motion is essential for the function and doing so would invalidate the activity.     ",
+        context: null,
+        selector: "",
         runner: "htmlcs",
         runnerExtras: {},
+        guideLinks: ["https://www.w3.org/TR/WCAG20/"],
       },
       {
-        code: "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
-        type: "error",
-        typeCode: 1,
+        code: "WCAG2AA.Principle3.Guideline3_1.3_1_2.H58",
+        type: "notice",
+        typeCode: 3,
         message:
-          "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 3.65:1. Recommendation:  change text colour to #585858.",
-        context: '<span class="extend">...</span>',
-        selector:
-          "#noticias > div > div > div > div > div > div > div:nth-child(2) > span:nth-child(11)",
+          "Ensure that any change in language is marked using the lang and/or xml:lang attribute on an element, as appropriate.",
+        context: null,
+        selector: "",
         runner: "htmlcs",
         runnerExtras: {},
+        guideLinks: ["https://www.w3.org/WAI/WCAG21/Techniques/html/H58"],
       },
       {
-        code: "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
-        type: "error",
-        typeCode: 1,
+        code: "WCAG2AA.Principle3.Guideline3_2.3_2_3.G61",
+        type: "notice",
+        typeCode: 3,
         message:
-          "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 1.75:1. Recommendation:  change text colour to #005b99.",
-        context:
-          '<a class="nextpostslink" rel="next" aria-label="Página siguiente" href="https://unahur.edu.ar/page/2/?et_blog">»</a>',
-        selector:
-          "#noticias > div > div > div > div > div > div > div:nth-child(2) > a:nth-child(12)",
+          "Check that navigational mechanisms that are repeated on multiple Web pages occur in the same relative order each time they are repeated, unless a change is initiated by the user.",
+        context: null,
+        selector: "",
         runner: "htmlcs",
         runnerExtras: {},
+        guideLinks: ["https://www.w3.org/WAI/WCAG21/Techniques/general/G61"],
       },
       {
-        code: "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
-        type: "error",
-        typeCode: 1,
+        code: "WCAG2AA.Principle3.Guideline3_2.3_2_4.G197",
+        type: "notice",
+        typeCode: 3,
         message:
-          "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 1.75:1. Recommendation:  change text colour to #005b99.",
-        context:
-          '<a class="last" aria-label="Last Page" href="https://unahur.edu.ar/page/149/?et_blog">Última »</a>',
-        selector:
-          "#noticias > div > div > div > div > div > div > div:nth-child(2) > a:nth-child(13)",
+          "Check that components that have the same functionality within this Web page are identified consistently in the set of Web pages to which it belongs.",
+        context: null,
+        selector: "",
         runner: "htmlcs",
         runnerExtras: {},
+        guideLinks: ["https://www.w3.org/WAI/WCAG21/Techniques/general/G197"],
       },
       {
-        code: "WCAG2AA.Principle1.Guideline1_1.1_1_1.H67.1",
-        type: "error",
-        typeCode: 1,
+        code: "WCAG2AA.Principle4.Guideline4_1.4_1_3.",
+        type: "notice",
+        typeCode: 3,
         message:
-          "Img element with empty alt text must have absent or empty title attribute.",
-        context:
-          '<img loading="lazy" decoding="async" width="1738" height="865" src="https://unahur.edu.ar/wp-content/uploads/2021/03/image4198.png" alt="" title="image4198" srcset="https://unahur.edu.ar/wp-content/uploads/2021/03/image4198.png 1738w, https://unahur....',
-        selector:
-          "#post-10 > div > div > div > div:nth-child(5) > div:nth-child(1) > div:nth-child(2) > div > span > img",
+          "Check that status messages can be programmatically determined through role or properties such that they can be presented to the user by assistive technologies without receiving focus.",
+        context: null,
+        selector: "",
         runner: "htmlcs",
         runnerExtras: {},
-      },
-      {
-        code: "WCAG2AA.Principle1.Guideline1_1.1_1_1.H67.1",
-        type: "error",
-        typeCode: 1,
-        message:
-          "Img element with empty alt text must have absent or empty title attribute.",
-        context:
-          '<img loading="lazy" decoding="async" width="1736" height="862" src="https://unahur.edu.ar/wp-content/uploads/2021/03/g4076.png" alt="" title="g4076" srcset="https://unahur.edu.ar/wp-content/uploads/2021/03/g4076.png 1736w, https://unahur.edu.ar/wp-co...',
-        selector:
-          "#post-10 > div > div > div > div:nth-child(5) > div:nth-child(2) > div:nth-child(1) > div > span > img",
-        runner: "htmlcs",
-        runnerExtras: {},
-      },
-      {
-        code: "WCAG2AA.Principle1.Guideline1_1.1_1_1.H67.1",
-        type: "error",
-        typeCode: 1,
-        message:
-          "Img element with empty alt text must have absent or empty title attribute.",
-        context:
-          '<img loading="lazy" decoding="async" width="1754" height="862" src="https://unahur.edu.ar/wp-content/uploads/2021/03/g4200.png" alt="" title="g4200" srcset="https://unahur.edu.ar/wp-content/uploads/2021/03/g4200.png 1754w, https://unahur.edu.ar/wp-co...',
-        selector:
-          "#post-10 > div > div > div > div:nth-child(5) > div:nth-child(3) > div:nth-child(2) > div > span > img",
-        runner: "htmlcs",
-        runnerExtras: {},
-      },
-      {
-        code: "WCAG2AA.Principle1.Guideline1_1.1_1_1.H67.1",
-        type: "error",
-        typeCode: 1,
-        message:
-          "Img element with empty alt text must have absent or empty title attribute.",
-        context:
-          '<img loading="lazy" decoding="async" width="1753" height="862" src="https://unahur.edu.ar/wp-content/uploads/2021/03/biotegnologia2.png" alt="" title="biotegnologia2" srcset="https://unahur.edu.ar/wp-content/uploads/2021/03/biotegnologia2.png 1753w, ...',
-        selector:
-          "#post-10 > div > div > div > div:nth-child(5) > div:nth-child(4) > div:nth-child(1) > div > span > img",
-        runner: "htmlcs",
-        runnerExtras: {},
-      },
-      {
-        code: "WCAG2AA.Principle1.Guideline1_4.1_4_3.G145.Fail",
-        type: "error",
-        typeCode: 1,
-        message:
-          "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 3:1, but text in this element has a contrast ratio of 2.08:1. Recommendation:  change text colour to #438112.",
-        context: '<span class="dsm_icon_list_icon"></span>',
-        selector:
-          "#unahurencifras > div:nth-child(3) > div > div > div > ul > li > span:nth-child(1) > span",
-        runner: "htmlcs",
-        runnerExtras: {},
-      },
-      {
-        code: "WCAG2AA.Principle1.Guideline1_1.1_1_1.H67.1",
-        type: "error",
-        typeCode: 1,
-        message:
-          "Img element with empty alt text must have absent or empty title attribute.",
-        context:
-          '<img loading="lazy" decoding="async" width="227" height="221" src="https://unahur.edu.ar/wp-content/uploads/2021/05/Libros-Unahur.png" alt="" title="Libros Unahur" class="wp-image-3061">',
-        selector: "#slick-slide00 > div > div > a > span > img",
-        runner: "htmlcs",
-        runnerExtras: {},
-      },
-      {
-        code: "WCAG2AA.Principle1.Guideline1_1.1_1_1.H67.1",
-        type: "error",
-        typeCode: 1,
-        message:
-          "Img element with empty alt text must have absent or empty title attribute.",
-        context:
-          '<img loading="lazy" decoding="async" width="227" height="221" src="https://unahur.edu.ar/wp-content/uploads/2021/05/Campus-virtual_1.png" alt="" title="Campus virtual_1" class="wp-image-3060">',
-        selector: "#slick-slide01 > div > div > a > span > img",
-        runner: "htmlcs",
-        runnerExtras: {},
-      },
-      {
-        code: "WCAG2AA.Principle1.Guideline1_1.1_1_1.H67.1",
-        type: "error",
-        typeCode: 1,
-        message:
-          "Img element with empty alt text must have absent or empty title attribute.",
-        context:
-          '<img loading="lazy" decoding="async" width="227" height="221" src="https://unahur.edu.ar/wp-content/uploads/2021/06/aulaabierta_small.png" alt="" title="aulaabierta_small" class="wp-image-5512">',
-        selector: "#slick-slide02 > div > div > a > span > img",
-        runner: "htmlcs",
-        runnerExtras: {},
-      },
-      {
-        code: "WCAG2AA.Principle1.Guideline1_1.1_1_1.H67.1",
-        type: "error",
-        typeCode: 1,
-        message:
-          "Img element with empty alt text must have absent or empty title attribute.",
-        context:
-          '<img loading="lazy" decoding="async" width="227" height="221" src="https://unahur.edu.ar/wp-content/uploads/2021/05/CEM.png" alt="" title="CEM" class="wp-image-3752">',
-        selector: "#slick-slide03 > div > div > a > span > img",
-        runner: "htmlcs",
-        runnerExtras: {},
-      },
-      {
-        code: "WCAG2AA.Principle2.Guideline2_4.2_4_1.H64.1",
-        type: "error",
-        typeCode: 1,
-        message:
-          "Iframe element requires a non-empty title attribute that identifies the frame.",
-        context:
-          '<iframe loading="lazy" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FUNAHUR%2F&amp;tabs=timeline&amp;width=340&amp;height=600px&amp;small_header=true&amp;adapt_container_width=true&amp;hide_cover=true&amp;show_f...',
-        selector:
-          "#post-10 > div > div > div > div:nth-child(8) > div:nth-child(2) > div:nth-child(1) > div > div > iframe",
-        runner: "htmlcs",
-        runnerExtras: {},
-      },
-      {
-        code: "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
-        type: "error",
-        typeCode: 1,
-        message:
-          "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 2.78:1. Recommendation:  change background to #017faa.",
-        context:
-          '<button aria-label="Follow unahurlingham on Instagram" class="DesignedButton__button FollowButton" tabindex="-1" style="background: rgb(41, 167, 210); font-weight: normal; font-style: normal; text-decoration: none; text-align: center; color: rgb(255,...',
-        selector:
-          "#sli-feed-ac767f3d > div > div > div > div:nth-child(3) > div > a > button",
-        runner: "htmlcs",
-        runnerExtras: {},
-      },
-      {
-        code: "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
-        type: "error",
-        typeCode: 1,
-        message:
-          "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 2.52:1. Recommendation:  change text colour to #0074c2.",
-        context:
-          '<a class="twitter-timeline" data-lang="es" data-width="300" data-height="600" data-theme="light" href="https://twitter.com/unahurlingham?ref_src=twsrc%5Etfw" data-twitter-extracted-i170784754077917555="true">Tweets by unahurlingham</a>',
-        selector:
-          "#post-10 > div > div > div > div:nth-child(8) > div:nth-child(2) > div:nth-child(3) > div > div > a",
-        runner: "htmlcs",
-        runnerExtras: {},
-      },
-      {
-        code: "WCAG2AA.Principle1.Guideline1_4.1_4_3.G145.Fail",
-        type: "error",
-        typeCode: 1,
-        message:
-          "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 3:1, but text in this element has a contrast ratio of 1:1. Recommendation:  change text colour to #949494.",
-        context:
-          '<a class="et_pb_button et_pb_more_button et_pb_button_one" href="/malvinas-40-el-suelo-mas-querido/">Malvinas, 40 años -  El suelo m...</a>',
-        selector:
-          "#post-10 > div > div > div > div:nth-child(9) > section > div:nth-child(2) > div > div > a",
-        runner: "htmlcs",
-        runnerExtras: {},
-      },
-      {
-        code: "WCAG2AA.Principle1.Guideline1_1.1_1_1.H30.2",
-        type: "error",
-        typeCode: 1,
-        message:
-          "Img element is the only content of the link, but is missing alt text. The alt text should describe the purpose of the link.",
-        context:
-          '<a href="https://unahur.edu.ar/wp-content/uploads/2021/05/13032020-ISC-encabezado-2.jpg" title="13032020-ISC encabezado-2">\n\t\t\t\t\t<img loading="lazy" decod...</a>',
-        selector:
-          "#post-10 > div > div > div > div:nth-child(10) > div > div > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div > a",
-        runner: "htmlcs",
-        runnerExtras: {},
-      },
-      {
-        code: "WCAG2AA.Principle1.Guideline1_1.1_1_1.H30.2",
-        type: "error",
-        typeCode: 1,
-        message:
-          "Img element is the only content of the link, but is missing alt text. The alt text should describe the purpose of the link.",
-        context:
-          '<a href="https://unahur.edu.ar/wp-content/uploads/2021/05/18102019-18102019-Copia-de-IMG_3490.jpg" title="18102019-18102019-Copia de IMG_3490">\n\t\t\t\t\t<img loading="lazy" decod...</a>',
-        selector:
-          "#post-10 > div > div > div > div:nth-child(10) > div > div > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div > a",
-        runner: "htmlcs",
-        runnerExtras: {},
-      },
-      {
-        code: "WCAG2AA.Principle1.Guideline1_1.1_1_1.H30.2",
-        type: "error",
-        typeCode: 1,
-        message:
-          "Img element is the only content of the link, but is missing alt text. The alt text should describe the purpose of the link.",
-        context:
-          '<a href="https://unahur.edu.ar/wp-content/uploads/2021/05/27022020-Copia-de-IMG_4199-2.jpg" title="27022020-Copia de IMG_4199-2">\n\t\t\t\t\t<img loading="lazy" decod...</a>',
-        selector:
-          "#post-10 > div > div > div > div:nth-child(10) > div > div > div:nth-child(2) > div:nth-child(1) > div:nth-child(3) > div > a",
-        runner: "htmlcs",
-        runnerExtras: {},
-      },
-      {
-        code: "WCAG2AA.Principle1.Guideline1_1.1_1_1.H30.2",
-        type: "error",
-        typeCode: 1,
-        message:
-          "Img element is the only content of the link, but is missing alt text. The alt text should describe the purpose of the link.",
-        context:
-          '<a href="https://unahur.edu.ar/wp-content/uploads/2021/05/12042017-12042017-DSC_5882.jpg" title="12042017-12042017-DSC_5882">\n\t\t\t\t\t<img loading="lazy" decod...</a>',
-        selector:
-          "#post-10 > div > div > div > div:nth-child(10) > div > div > div:nth-child(2) > div:nth-child(1) > div:nth-child(4) > div > a",
-        runner: "htmlcs",
-        runnerExtras: {},
-      },
-      {
-        code: "WCAG2AA.Principle1.Guideline1_1.1_1_1.H30.2",
-        type: "error",
-        typeCode: 1,
-        message:
-          "Img element is the only content of the link, but is missing alt text. The alt text should describe the purpose of the link.",
-        context:
-          '<a href="https://unahur.edu.ar/wp-content/uploads/2021/05/28012019-Copia-de-IMG_8869-2.jpg" title="28012019-Copia de IMG_8869-2">\n\t\t\t\t\t<img loading="lazy" decod...</a>',
-        selector:
-          "#post-10 > div > div > div > div:nth-child(10) > div > div > div:nth-child(2) > div:nth-child(1) > div:nth-child(5) > div > a",
-        runner: "htmlcs",
-        runnerExtras: {},
-      },
-      {
-        code: "WCAG2AA.Principle1.Guideline1_1.1_1_1.H30.2",
-        type: "error",
-        typeCode: 1,
-        message:
-          "Img element is the only content of the link, but is missing alt text. The alt text should describe the purpose of the link.",
-        context:
-          '<a href="https://unahur.edu.ar/wp-content/uploads/2021/05/27022020-Copia-de-IMG_4313-2.jpg" title="27022020-Copia de IMG_4313-2">\n\t\t\t\t\t<img loading="lazy" decod...</a>',
-        selector:
-          "#post-10 > div > div > div > div:nth-child(10) > div > div > div:nth-child(2) > div:nth-child(1) > div:nth-child(6) > div > a",
-        runner: "htmlcs",
-        runnerExtras: {},
-      },
-      {
-        code: "WCAG2AA.Principle1.Guideline1_1.1_1_1.H30.2",
-        type: "error",
-        typeCode: 1,
-        message:
-          "Img element is the only content of the link, but is missing alt text. The alt text should describe the purpose of the link.",
-        context:
-          '<a href="https://unahur.edu.ar/wp-content/uploads/2021/05/23082019-Copia-de-IMG_2403.jpg" title="23082019-Copia de IMG_2403">\n\t\t\t\t\t<img loading="lazy" decod...</a>',
-        selector:
-          "#post-10 > div > div > div > div:nth-child(10) > div > div > div:nth-child(2) > div:nth-child(1) > div:nth-child(7) > div > a",
-        runner: "htmlcs",
-        runnerExtras: {},
-      },
-      {
-        code: "WCAG2AA.Principle1.Guideline1_1.1_1_1.H30.2",
-        type: "error",
-        typeCode: 1,
-        message:
-          "Img element is the only content of the link, but is missing alt text. The alt text should describe the purpose of the link.",
-        context:
-          '<a href="https://unahur.edu.ar/wp-content/uploads/2021/05/26042021-ITI-encabezado.jpg" title="26042021-ITI encabezado">\n\t\t\t\t\t<img loading="lazy" decod...</a>',
-        selector:
-          "#post-10 > div > div > div > div:nth-child(10) > div > div > div:nth-child(2) > div:nth-child(1) > div:nth-child(8) > div > a",
-        runner: "htmlcs",
-        runnerExtras: {},
-      },
-      {
-        code: "WCAG2AA.Principle1.Guideline1_1.1_1_1.H30.2",
-        type: "error",
-        typeCode: 1,
-        message:
-          "Img element is the only content of the link, but is missing alt text. The alt text should describe the purpose of the link.",
-        context:
-          '<a href="https://unahur.edu.ar/wp-content/uploads/2021/05/11092017-44-2.jpg" title="11092017-44-2">\n\t\t\t\t\t<img loading="lazy" decod...</a>',
-        selector:
-          "#post-10 > div > div > div > div:nth-child(10) > div > div > div:nth-child(2) > div:nth-child(1) > div:nth-child(9) > div > a",
-        runner: "htmlcs",
-        runnerExtras: {},
-      },
-      {
-        code: "WCAG2AA.Principle1.Guideline1_1.1_1_1.H30.2",
-        type: "error",
-        typeCode: 1,
-        message:
-          "Img element is the only content of the link, but is missing alt text. The alt text should describe the purpose of the link.",
-        context:
-          '<a href="https://unahur.edu.ar/wp-content/uploads/2021/05/13032018-13032018-IMG_6816.jpg" title="13032018-13032018-IMG_6816">\n\t\t\t\t\t<img loading="lazy" decod...</a>',
-        selector:
-          "#post-10 > div > div > div > div:nth-child(10) > div > div > div:nth-child(2) > div:nth-child(1) > div:nth-child(10) > div > a",
-        runner: "htmlcs",
-        runnerExtras: {},
-      },
-      {
-        code: "WCAG2AA.Principle1.Guideline1_1.1_1_1.H30.2",
-        type: "error",
-        typeCode: 1,
-        message:
-          "Img element is the only content of the link, but is missing alt text. The alt text should describe the purpose of the link.",
-        context:
-          '<a href="https://unahur.edu.ar/wp-content/uploads/2021/05/25032019-IMG_1824.jpg" title="25032019-IMG_1824">\n\t\t\t\t\t<img loading="lazy" decod...</a>',
-        selector:
-          "#post-10 > div > div > div > div:nth-child(10) > div > div > div:nth-child(2) > div:nth-child(1) > div:nth-child(11) > div > a",
-        runner: "htmlcs",
-        runnerExtras: {},
-      },
-      {
-        code: "WCAG2AA.Principle1.Guideline1_1.1_1_1.H30.2",
-        type: "error",
-        typeCode: 1,
-        message:
-          "Img element is the only content of the link, but is missing alt text. The alt text should describe the purpose of the link.",
-        context:
-          '<a href="https://unahur.edu.ar/wp-content/uploads/2021/05/15102020-DSC_7504.jpg" title="15102020-DSC_7504">\n\t\t\t\t\t<img loading="lazy" decod...</a>',
-        selector:
-          "#post-10 > div > div > div > div:nth-child(10) > div > div > div:nth-child(2) > div:nth-child(1) > div:nth-child(12) > div > a",
-        runner: "htmlcs",
-        runnerExtras: {},
-      },
-      {
-        code: "WCAG2AA.Principle1.Guideline1_1.1_1_1.H30.2",
-        type: "error",
-        typeCode: 1,
-        message:
-          "Img element is the only content of the link, but is missing alt text. The alt text should describe the purpose of the link.",
-        context:
-          '<a href="https://unahur.edu.ar/wp-content/uploads/2021/05/27112020-Copia-de-IMG_8164-2.jpg" title="27112020-Copia de IMG_8164-2">\n\t\t\t\t\t<img loading="lazy" decod...</a>',
-        selector:
-          "#post-10 > div > div > div > div:nth-child(10) > div > div > div:nth-child(2) > div:nth-child(1) > div:nth-child(13) > div > a",
-        runner: "htmlcs",
-        runnerExtras: {},
-      },
-      {
-        code: "WCAG2AA.Principle1.Guideline1_1.1_1_1.H30.2",
-        type: "error",
-        typeCode: 1,
-        message:
-          "Img element is the only content of the link, but is missing alt text. The alt text should describe the purpose of the link.",
-        context:
-          '<a href="https://unahur.edu.ar/wp-content/uploads/2021/05/14032019-Copia-de-IMG_1017-2.jpg" title="14032019-Copia de IMG_1017-2">\n\t\t\t\t\t<img loading="lazy" decod...</a>',
-        selector:
-          "#post-10 > div > div > div > div:nth-child(10) > div > div > div:nth-child(2) > div:nth-child(1) > div:nth-child(14) > div > a",
-        runner: "htmlcs",
-        runnerExtras: {},
-      },
-      {
-        code: "WCAG2AA.Principle1.Guideline1_1.1_1_1.H30.2",
-        type: "error",
-        typeCode: 1,
-        message:
-          "Img element is the only content of the link, but is missing alt text. The alt text should describe the purpose of the link.",
-        context:
-          '<a href="https://unahur.edu.ar/wp-content/uploads/2021/05/28032019-28032019-Copia-de-IMG_3316.jpg" title="28032019-28032019-Copia de IMG_3316">\n\t\t\t\t\t<img loading="lazy" decod...</a>',
-        selector:
-          "#post-10 > div > div > div > div:nth-child(10) > div > div > div:nth-child(2) > div:nth-child(1) > div:nth-child(15) > div > a",
-        runner: "htmlcs",
-        runnerExtras: {},
-      },
-      {
-        code: "WCAG2AA.Principle1.Guideline1_1.1_1_1.H30.2",
-        type: "error",
-        typeCode: 1,
-        message:
-          "Img element is the only content of the link, but is missing alt text. The alt text should describe the purpose of the link.",
-        context:
-          '<a href="https://unahur.edu.ar/wp-content/uploads/2021/05/05022019-IMG_9207-2.jpg" title="05022019-IMG_9207-2">\n\t\t\t\t\t<img loading="lazy" decod...</a>',
-        selector:
-          "#post-10 > div > div > div > div:nth-child(10) > div > div > div:nth-child(2) > div:nth-child(1) > div:nth-child(16) > div > a",
-        runner: "htmlcs",
-        runnerExtras: {},
-      },
-      {
-        code: "WCAG2AA.Principle1.Guideline1_1.1_1_1.H30.2",
-        type: "error",
-        typeCode: 1,
-        message:
-          "Img element is the only content of the link, but is missing alt text. The alt text should describe the purpose of the link.",
-        context:
-          '<a href="https://unahur.edu.ar/wp-content/uploads/2021/05/04052019-Copia-de-IMG_7111-2.jpg" title="04052019-Copia de IMG_7111-2">\n\t\t\t\t\t<img loading="lazy" decod...</a>',
-        selector:
-          "#post-10 > div > div > div > div:nth-child(10) > div > div > div:nth-child(2) > div:nth-child(1) > div:nth-child(17) > div > a",
-        runner: "htmlcs",
-        runnerExtras: {},
-      },
-      {
-        code: "WCAG2AA.Principle1.Guideline1_1.1_1_1.H30.2",
-        type: "error",
-        typeCode: 1,
-        message:
-          "Img element is the only content of the link, but is missing alt text. The alt text should describe the purpose of the link.",
-        context:
-          '<a href="https://unahur.edu.ar/wp-content/uploads/2021/05/12082020-IB-encabezado-2.jpg" title="12082020-IB encabezado-2">\n\t\t\t\t\t<img loading="lazy" decod...</a>',
-        selector:
-          "#post-10 > div > div > div > div:nth-child(10) > div > div > div:nth-child(2) > div:nth-child(1) > div:nth-child(18) > div > a",
-        runner: "htmlcs",
-        runnerExtras: {},
-      },
-      {
-        code: "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
-        type: "error",
-        typeCode: 1,
-        message:
-          "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 3.85:1. Recommendation:  change background to #007dbb.",
-        context: '<h3 class="title">Estudiantes</h3>',
-        selector:
-          "#post-10 > div > div > div > div:nth-child(11) > div > div:nth-child(1) > div:nth-child(1) > h3",
-        runner: "htmlcs",
-        runnerExtras: {},
-      },
-      {
-        code: "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
-        type: "error",
-        typeCode: 1,
-        message:
-          "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 2.68:1. Recommendation:  change background to #b46100.",
-        context: '<h3 class="title">Proyectos de Investigación</h3>',
-        selector:
-          "#post-10 > div > div > div > div:nth-child(11) > div > div:nth-child(1) > div:nth-child(2) > h3",
-        runner: "htmlcs",
-        runnerExtras: {},
-      },
-      {
-        code: "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
-        type: "error",
-        typeCode: 1,
-        message:
-          "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 3.66:1. Recommendation:  change background to #4f4f4f.",
-        context: '<h3 class="title">Carreras</h3>',
-        selector:
-          "#post-10 > div > div > div > div:nth-child(11) > div > div:nth-child(2) > div:nth-child(1) > h3",
-        runner: "htmlcs",
-        runnerExtras: {},
-      },
-      {
-        code: "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
-        type: "error",
-        typeCode: 1,
-        message:
-          "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 2.99:1. Recommendation:  change background to #00857f.",
-        context: '<h3 class="title">Talleres culturales, deportivos...</h3>',
-        selector:
-          "#post-10 > div > div > div > div:nth-child(11) > div > div:nth-child(2) > div:nth-child(2) > h3",
-        runner: "htmlcs",
-        runnerExtras: {},
-      },
-      {
-        code: "WCAG2AA.Principle1.Guideline1_1.1_1_1.H67.1",
-        type: "error",
-        typeCode: 1,
-        message:
-          "Img element with empty alt text must have absent or empty title attribute.",
-        context:
-          '<img loading="lazy" decoding="async" width="676" height="456" src="https://unahur.edu.ar/wp-content/uploads/2021/08/MAPA-UNAHUR-01.jpg" alt="" title="MAPA UNAHUR-01" srcset="https://unahur.edu.ar/wp-content/uploads/2021/08/MAPA-UNAHUR-01.jpg 676w, ht...',
-        selector:
-          "#post-10 > div > div > div > div:nth-child(11) > div > div:nth-child(3) > div:nth-child(2) > span > img",
-        runner: "htmlcs",
-        runnerExtras: {},
-      },
-      {
-        code: "WCAG2AA.Principle4.Guideline4_1.4_1_1.F77",
-        type: "error",
-        typeCode: 1,
-        message: 'Duplicate id attribute value "et-boc" found on the web page.',
-        context:
-          '<div id="et-boc" class="dm-base-context"><div class="et-l dm-base-contex...</div>',
-        selector: "#et-boc",
-        runner: "htmlcs",
-        runnerExtras: {},
+        guideLinks: ["https://www.w3.org/TR/WCAG20/"],
       },
     ],
   },
   ok: true,
   issueCountByType: {
-    error: 63,
-    warning: 2,
-    notice: 1,
+    error: 1,
+    warning: 0,
+    notice: 26,
   },
   accessible: true,
-  countAprovedIssues: 30,
+  countAprovedIssues: 37,
 };

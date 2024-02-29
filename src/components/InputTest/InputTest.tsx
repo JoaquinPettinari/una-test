@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { validateUrl } from "../../utils/link";
-import { useNavigate } from "react-router-dom";
+import { createSearchParams, useNavigate } from "react-router-dom";
 
 interface InputTestProps {
   pageUrl?: string;
@@ -32,7 +32,12 @@ const InputTest = ({ pageUrl, errorMessage }: InputTestProps) => {
       isValid,
     }));
     if (isValid) {
-      navigate(`/analizar?url=${website.link}`, { relative: "path" });
+      navigate({
+        pathname: "/analizar",
+        search: `${createSearchParams({
+          url: website.link,
+        })}`,
+      });
       return;
     }
 
