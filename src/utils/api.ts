@@ -13,7 +13,7 @@ export interface Pa11y {
   countAprovedIssues: number;
 }
 
-interface Issue {
+export interface Issue {
   code: string;
   type: string;
   typeCode: number;
