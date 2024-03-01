@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { validateUrl } from "../../utils/link";
-import { useNavigate } from "react-router-dom";
+import { createSearchParams, useNavigate } from "react-router-dom";
 
 interface InputTestProps {
   pageUrl?: string;
@@ -13,6 +13,17 @@ const InputTest = ({ pageUrl, errorMessage }: InputTestProps) => {
     isValid: true,
   });
 
+  useEffect(() => {
+    onChangeURL(pageUrl || "");
+  }, [pageUrl]);
+
+  const onChangeURL = (link: string) => {
+    setWebsite((prevState) => ({
+      ...prevState,
+      link,
+    }));
+  };
+
   const navigate = useNavigate();
   const validateWeb = () => {
     const isValid = validateUrl(website.link);
@@ -21,7 +32,12 @@ const InputTest = ({ pageUrl, errorMessage }: InputTestProps) => {
       isValid,
     }));
     if (isValid) {
-      navigate(`/analizar?url=${website.link}`, { relative: "path" });
+      navigate({
+        pathname: "/analizar",
+        search: `${createSearchParams({
+          url: website.link,
+        })}`,
+      });
       return;
     }
 
@@ -41,15 +57,10 @@ const InputTest = ({ pageUrl, errorMessage }: InputTestProps) => {
             type="text"
             name="url"
             id="url"
-            defaultValue={pageUrl}
-            onChange={(event) =>
-              setWebsite((prevState) => ({
-                ...prevState,
-                link: event.target.value,
-              }))
-            }
+            value={website.link}
+            onChange={(event) => onChangeURL(event.target.value)}
             className="block w-full rounded-md border-0 py-1.5 pl-4 pr-5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-            placeholder="unahur.edu.ar"
+            placeholder="http://example.com"
           />
         </div>
         {!website.isValid && <ErrorMessage label={"Url inválida"} />}

@@ -1,76 +1,51 @@
-import { memo, useMemo } from "react";
+import { memo } from "react";
 import { Pa11y } from "../../utils/api";
+import IssueResumeCard from "./IssueResumeCard";
+import { usePageResults } from "../../hooks/usePageResults";
+import Issue from "./Issue";
 
 interface PageResultsProps {
   pa11yResults: Pa11y;
 }
 
-const codeTypeColor: any = {
-  error: "red",
-  warning: "#EED202",
-  notice: "#000080",
-};
-
 // eslint-disable-next-line react-refresh/only-export-components
 function PageResults({ pa11yResults }: PageResultsProps) {
-  const { issueCountByType, data } = pa11yResults;
-  const { error, warning, notice } = issueCountByType;
-  const issuesResume = useMemo(() => {
-    return [
-      {
-        label: "ERRORES",
-        amount: error,
-        color: codeTypeColor.error,
-      },
-      {
-        label: "ADVERTENCIAS",
-        amount: warning,
-        color: codeTypeColor.warning,
-      },
-      {
-        label: "OBSERVACIONES",
-        amount: notice,
-        color: codeTypeColor.notice,
-      },
-    ];
-  }, [error, warning, notice]);
+  const { issues, onClickCard, colors, resumeCards, downloadReport } =
+    usePageResults(pa11yResults);
 
   return (
-    <div className="max-w-3xl m-auto mt-10 p-8 lg:p-0">
-      <div className="w-full grid grid-cols-1 gap-3 sm:grid-cols-3">
-        {issuesResume.map(({ label, amount, color }, index) => (
-          <div
-            key={index}
-            className="border-2 w-full rounded-md p-3"
-            style={{ borderColor: color }}
+    <div className="max-w-3xl m-auto mt-5 p-8 lg:p-0">
+      <div className="text-start mb-5">
+        {issues && (
+          <button
+            onClick={downloadReport}
+            className="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center"
           >
-            <h3 className="font-medium text-xl text-gray-700">{label}</h3>
-            <h4 className="font-medium text-6xl">{amount}</h4>
-          </div>
+            <svg
+              className="fill-current w-4 h-4 mr-2"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+            >
+              <path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z" />
+            </svg>
+            <span>Descargar reporte</span>
+          </button>
+        )}
+      </div>
+      <div className="w-full grid grid-cols-1 gap-3 sm:grid-cols-3">
+        {resumeCards.map((props, index) => (
+          <IssueResumeCard {...props} key={index} onClickCard={onClickCard} />
         ))}
       </div>
-      <div className="w-full flex flex-col mt-4 ">
-        {data.issues.map((issue, index) => (
-          <div
-            key={index}
-            className="border-2 mb-4 p-4 bg-white text-start"
-            style={{ borderColor: codeTypeColor[issue.type] }}
-          >
-            <h2 className="text-lg mb-2">
-              <span className="uppercase font-bold">{issue.type}</span>:{" "}
-              {issue.message}
-            </h2>
-            <hr />
-            <div className="mt-3 text-gray-500">
-              <h5 className="overflow-hidden text-ellipsis">{issue.context}</h5>
-              <br />
-              <h5>{issue.code}</h5>
-            </div>
-          </div>
-        ))}
+      <div className="w-full flex flex-col mt-10">
+        {issues.map((issue, index) => {
+          const border = colors[issue.type].border;
+          return <Issue border={border} issue={issue} key={index} />;
+        })}
       </div>
     </div>
   );
 }
 
+// eslint-disable-next-line react-refresh/only-export-components
 export default memo(PageResults);

@@ -13,15 +13,16 @@ export interface Pa11y {
   countAprovedIssues: number;
 }
 
-interface Issue {
+export interface Issue {
   code: string;
   type: string;
   typeCode: number;
   message: string;
-  context: string;
+  context: null | string;
   selector: string;
   runner: string;
   runnerExtras: unknown;
+  guideLinks: string[];
 }
 
 interface IssueType {
