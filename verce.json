@@ -1,0 +1,10 @@
+{
+    "functions": {
+        "src/utils/api.ts": {
+          "maxDuration": 30
+        },
+        "src/utils/*.ts": {
+          "maxDuration": 30
+        }
+    } 
+}
