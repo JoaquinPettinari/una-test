@@ -4,7 +4,7 @@ import Title from "./Title";
 import Bookshelf from "../../assets/bookshelf.svg";
 const DocSection = () => {
   return (
-    <section className="max-w-7xl mx-auto mt-20">
+    <section className="max-w-7xl mx-auto mt-20 text-lg">
       <div className="flex items-center justify-center">
         <img src={Beginner} alt="Beginner icon" className="mr-3" />
         <Title title="Guia para iniciar en Accesibilidad Web" />
@@ -16,7 +16,7 @@ const DocSection = () => {
           link="https://www.w3.org/WAI/standards-guidelines/wcag/es"
         >
           <>
-            <p className="text-lg">
+            <p>
               Se desarrollan en cooperación con personas y organizaciones de
               todo el mundo, con el fin de ofrecer un estándar único y
               compartido que satisfaga las necesidades de las personas,
@@ -106,7 +106,7 @@ const DocSection = () => {
           title="Accesibilidad Web en Argentina"
           link="https://github.com/argob/accesibilidad-web/blob/master/docs/recomendaciones_pautas_accesibilidad_web.md#las-pautas-de-accesibilidad-web-en-la-argentina"
         >
-          <p className="text-lg">
+          <p>
             La normativa técnica que adopta las WCAG 2.0 de la W3C en Argentina
             es la Disposición ONTI 6/2019, siendo "A" y "AA" los niveles de
             conformidad requeridos.
