@@ -8,7 +8,6 @@ function useAnalize() {
   const [website, setWebsite] = useState({
     link: "",
     isValid: true,
-    errorMessage: "",
   });
 
   const onChangeURL = (link: string) => {
@@ -30,7 +29,6 @@ function useAnalize() {
       try {
         await getPa11yData(website.link);
       } catch (error) {
-        // Manejar el error si la solicitud falla
         console.error("Error fetching data:", error);
       }
       setLoading(false);
@@ -42,7 +40,6 @@ function useAnalize() {
       const response = await fetchPa11yApi(url);
       setPa11yResults(response);
     } catch (error) {
-      // Manejar el error si la solicitud falla
       console.error("Error fetching data:", error);
       throw error;
     }

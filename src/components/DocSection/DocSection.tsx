@@ -4,7 +4,7 @@ import Title from "./Title";
 import Bookshelf from "../../assets/bookshelf.svg";
 const DocSection = () => {
   return (
-    <section className="mt-20 text-lg">
+    <section className="text-base">
       <header className="flex items-center justify-center">
         <img src={Beginner} alt="Beginner icon" className="mr-3" />
         <Title title="Guia para iniciar en Accesibilidad Web" />
@@ -22,6 +22,7 @@ const DocSection = () => {
               compartido que satisfaga las necesidades de las personas,
               organizaciones y gobiernos a nivel internacional.
             </p>
+            <br />
             <p>
               Las pautas de accesibilidad web internacionalmente adoptadas son
               las definidas por la W3C y se denominan en castellano: "Pautas de
@@ -49,7 +50,6 @@ const DocSection = () => {
                 conceptos importantes: principios, pautas, criterios de
                 conformidad y técnicas suficientes y recomendables.
               </p>
-              <br />
               <ul>
                 <li>
                   <b>Principios:</b> Son cuatro principios que proporcionan los
@@ -68,17 +68,17 @@ const DocSection = () => {
                   proporcionan criterios de conformidad verificables que
                   permiten emplear las WCAG 2.0 en la práctica. Con el fin de
                   cubrir las diferentes necesidades de las personas que navegan
-                  la web se han defindo tres niveles de conformidad; de menor a
+                  la web se han defindo tres niveles de conformidad, de menor a
                   mayor exigencia estos niveles son:
                   <ul style={{ listStyleType: "circle" }}>
                     <li>A: Deben cumplirse 25 criterios de conformidad.</li>
                     <li>
                       AA: Se agregan 13 criterios de conformidad a los 25 del
-                      nivel A; total 38 criterios.
+                      nivel A. Total 38 criterios.
                     </li>
                     <li>
                       AAA: Se agregan 23 criterios de conformidad a los 38 de
-                      los demás niveles; total 61 criterios.
+                      los demás niveles. Total 61 criterios.
                     </li>
                   </ul>
                 </li>

@@ -17,7 +17,7 @@ const InputTest = () => {
           htmlFor="url"
           className="block text-lg font-medium leading-6 text-gray-900"
         >
-          Enlace a tu web
+          Ingrese una URL
         </label>
         <div className="relative mt-2 rounded-md shadow-sm">
           <input
