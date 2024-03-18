@@ -7,10 +7,10 @@ function Home() {
   return (
     <>
       <Header />
-      <div className="p-5">
+      <main className="p-5">
         <InputTest />
         <DocSection />
-      </div>
+      </main>
     </>
   );
 }

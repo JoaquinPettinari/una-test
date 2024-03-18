@@ -5,10 +5,10 @@ import Bookshelf from "../../assets/bookshelf.svg";
 const DocSection = () => {
   return (
     <section className="max-w-7xl mx-auto mt-20 text-lg">
-      <div className="flex items-center justify-center">
+      <header className="flex items-center justify-center">
         <img src={Beginner} alt="Beginner icon" className="mr-3" />
         <Title title="Guia para iniciar en Accesibilidad Web" />
-      </div>
+      </header>
       <div className="grid lg:grid-cols-2 lg:grid-rows-2 gap-4 mt-10">
         <Card
           icon={Bookshelf}
