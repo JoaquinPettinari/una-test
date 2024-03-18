@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { validateUrl } from "../utils/link";
-import { defaultResponse, fetchPa11yApi } from "../utils/api";
+import { Pa11y, defaultResponse, fetchPa11yApi } from "../utils/api";
 
 function useAnalize() {
-  const [pa11yResults] = useState(defaultResponse);
+  const [pa11yResults, setPa11yResults] = useState<Pa11y>(defaultResponse);
   const [loading, setLoading] = useState(false);
   const [website, setWebsite] = useState({
     link: "",
@@ -40,7 +40,7 @@ function useAnalize() {
   const getPa11yData = async (url: string) => {
     try {
       const response = await fetchPa11yApi(url);
-      console.log(response);
+      setPa11yResults(response);
     } catch (error) {
       // Manejar el error si la solicitud falla
       console.error("Error fetching data:", error);

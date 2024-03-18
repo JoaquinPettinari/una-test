@@ -2,7 +2,8 @@ import { useContext } from "react";
 import { AnalizeContext } from "../../Context";
 
 const InputTest = () => {
-  const { onChangeURL, onSubmit, website } = useContext(AnalizeContext);
+  const { onChangeURL, onSubmit, website, pa11yResults } =
+    useContext(AnalizeContext);
 
   const handleSubmit = (event: { preventDefault: () => void }) => {
     event.preventDefault();
@@ -30,6 +31,7 @@ const InputTest = () => {
           />
         </div>
         {!website.isValid && <ErrorMessage label={"Url inválida"} />}
+        {pa11yResults.error && <ErrorMessage label={pa11yResults.error} />}
         <div className="w-full mt-6">
           <button
             type="submit"

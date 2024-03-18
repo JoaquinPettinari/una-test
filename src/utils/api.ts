@@ -31,7 +31,7 @@ interface IssueType {
   notice: number;
 }
 
-export const defaultResponse = {
+export const defaultResponse: Pa11y = {
   data: { documentTitle: "", pageUrl: "", issues: [] },
   ok: false,
   issueCountByType: { error: 0, warning: 0, notice: 0 },
