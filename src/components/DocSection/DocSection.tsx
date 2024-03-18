@@ -4,11 +4,11 @@ import Title from "./Title";
 import Bookshelf from "../../assets/bookshelf.svg";
 const DocSection = () => {
   return (
-    <section className="max-w-7xl mx-auto mt-20">
-      <div className="flex items-center justify-center">
+    <section className="text-base">
+      <header className="flex items-center justify-center">
         <img src={Beginner} alt="Beginner icon" className="mr-3" />
         <Title title="Guia para iniciar en Accesibilidad Web" />
-      </div>
+      </header>
       <div className="grid lg:grid-cols-2 lg:grid-rows-2 gap-4 mt-10">
         <Card
           icon={Bookshelf}
@@ -16,12 +16,13 @@ const DocSection = () => {
           link="https://www.w3.org/WAI/standards-guidelines/wcag/es"
         >
           <>
-            <p className="text-lg">
+            <p>
               Se desarrollan en cooperación con personas y organizaciones de
               todo el mundo, con el fin de ofrecer un estándar único y
               compartido que satisfaga las necesidades de las personas,
               organizaciones y gobiernos a nivel internacional.
             </p>
+            <br />
             <p>
               Las pautas de accesibilidad web internacionalmente adoptadas son
               las definidas por la W3C y se denominan en castellano: "Pautas de
@@ -49,7 +50,6 @@ const DocSection = () => {
                 conceptos importantes: principios, pautas, criterios de
                 conformidad y técnicas suficientes y recomendables.
               </p>
-              <br />
               <ul>
                 <li>
                   <b>Principios:</b> Son cuatro principios que proporcionan los
@@ -68,17 +68,17 @@ const DocSection = () => {
                   proporcionan criterios de conformidad verificables que
                   permiten emplear las WCAG 2.0 en la práctica. Con el fin de
                   cubrir las diferentes necesidades de las personas que navegan
-                  la web se han defindo tres niveles de conformidad; de menor a
+                  la web se han defindo tres niveles de conformidad, de menor a
                   mayor exigencia estos niveles son:
                   <ul style={{ listStyleType: "circle" }}>
                     <li>A: Deben cumplirse 25 criterios de conformidad.</li>
                     <li>
                       AA: Se agregan 13 criterios de conformidad a los 25 del
-                      nivel A; total 38 criterios.
+                      nivel A. Total 38 criterios.
                     </li>
                     <li>
                       AAA: Se agregan 23 criterios de conformidad a los 38 de
-                      los demás niveles; total 61 criterios.
+                      los demás niveles. Total 61 criterios.
                     </li>
                   </ul>
                 </li>
@@ -106,7 +106,7 @@ const DocSection = () => {
           title="Accesibilidad Web en Argentina"
           link="https://github.com/argob/accesibilidad-web/blob/master/docs/recomendaciones_pautas_accesibilidad_web.md#las-pautas-de-accesibilidad-web-en-la-argentina"
         >
-          <p className="text-lg">
+          <p>
             La normativa técnica que adopta las WCAG 2.0 de la W3C en Argentina
             es la Disposición ONTI 6/2019, siendo "A" y "AA" los niveles de
             conformidad requeridos.

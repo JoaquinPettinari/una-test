@@ -1,32 +1,36 @@
 import "./AnalyzePage.css";
-import InputTest from "../InputTest/InputTest";
 import Resume from "./Resume";
-import { useAnalyzePage } from "../../hooks/useAnalyzePage";
 import PageResults from "./PageResults";
+import DocSection from "../DocSection/DocSection";
+import { useContext } from "react";
+import { AnalizeContext } from "../../Context";
+import { Else, If, Then } from "react-if";
+import Skeletons from "./Skeletons";
 
 export default function AnalyzePage() {
-  const { loading, pa11yResults } = useAnalyzePage();
-
+  const { loading, pa11yResults } = useContext(AnalizeContext);
   return (
-    <div className="h-full flex flex-col">
-      <div className={`overlay ${!loading && "none"}`}>
-        <div className={"loader"} />
-      </div>
-      <div className={`w-full ${loading && "none"}`}>
-        <div className="bg-gray-200 p-8">
-          <InputTest
-            pageUrl={pa11yResults.data.pageUrl}
-            errorMessage={pa11yResults.error}
-          />
-          {pa11yResults.ok && (
-            <Resume
-              isAccessible={pa11yResults.accessible}
-              countAprovedIssues={pa11yResults.countAprovedIssues}
-            />
-          )}
-        </div>
-        <PageResults pa11yResults={pa11yResults} />
-      </div>
-    </div>
+    <main className="p-5 m-auto max-w-7xl">
+      <If condition={!pa11yResults.ok && !loading}>
+        <Then>
+          <DocSection />
+        </Then>
+        <Else>
+          <section className="h-full w-full flex flex-col">
+            {loading ? (
+              <Skeletons />
+            ) : (
+              <div className="w-full">
+                <Resume
+                  isAccessible={pa11yResults.accessible}
+                  countAprovedIssues={pa11yResults.countAprovedIssues}
+                />
+                <PageResults pa11yResults={pa11yResults} />
+              </div>
+            )}
+          </section>
+        </Else>
+      </If>
+    </main>
   );
 }

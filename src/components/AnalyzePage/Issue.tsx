@@ -13,7 +13,7 @@ function Issue({ issue, border }: IssueProps) {
     setIsExpanded(!isExpanded);
   };
   return (
-    <div
+    <article
       className={`border-2 rounded-md mb-4 p-4 bg-white text-start shadow-lg ${border}`}
     >
       <h2 className="text-lg mb-2">
@@ -70,7 +70,7 @@ function Issue({ issue, border }: IssueProps) {
           </div>
         </div>
       </div>
-    </div>
+    </article>
   );
 }
 

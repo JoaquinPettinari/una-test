@@ -1,17 +1,16 @@
 import "./Home.css";
 import Header from "../Header/Header";
-import InputTest from "../InputTest/InputTest";
-import DocSection from "../DocSection/DocSection";
+import { AnalizeContext } from "../../Context";
+import { useAnalize } from "../../hooks/useAnalize";
+import AnalyzePage from "../AnalyzePage/AnalyzePage";
 
 function Home() {
+  const props = useAnalize();
   return (
-    <>
+    <AnalizeContext.Provider value={{ ...props }}>
       <Header />
-      <div className="p-5">
-        <InputTest />
-        <DocSection />
-      </div>
-    </>
+      <AnalyzePage />
+    </AnalizeContext.Provider>
   );
 }
 

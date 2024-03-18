@@ -31,7 +31,7 @@ interface IssueType {
   notice: number;
 }
 
-export const defaultResponse = {
+export const defaultResponse: Pa11y = {
   data: { documentTitle: "", pageUrl: "", issues: [] },
   ok: false,
   issueCountByType: { error: 0, warning: 0, notice: 0 },
@@ -48,19 +48,14 @@ export const fetchPa11yApi = async (url: string): Promise<Pa11y> => {
     return apiResult;
   }
   try {
-    const response = await fetch(
-      `${import.meta.env.VITE_URL}/api/analizar?` +
-        new URLSearchParams({
-          url: url,
-        }),
-      {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-          "Access-Control-Allow-Origin": "*",
-        },
-      }
-    );
+    const response = await fetch(`${import.meta.env.VITE_URL}/api/analizar`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*",
+      },
+      body: JSON.stringify({ url }),
+    });
 
     const results: Pa11y = await response.json();
     return results;
