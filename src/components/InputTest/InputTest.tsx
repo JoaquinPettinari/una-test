@@ -1,47 +1,17 @@
-import { useEffect, useState } from "react";
-import { validateUrl } from "../../utils/link";
+import { useContext } from "react";
+import { AnalizeContext } from "../../Context";
 
-interface InputTestProps {
-  pageUrl?: string;
-  errorMessage?: string;
-}
+const InputTest = () => {
+  const { onChangeURL, onSubmit, website } = useContext(AnalizeContext);
 
-const InputTest = ({ pageUrl, errorMessage }: InputTestProps) => {
-  const [website, setWebsite] = useState({
-    link: pageUrl || "",
-    isValid: true,
-  });
-
-  useEffect(() => {
-    onChangeURL(pageUrl || "");
-  }, [pageUrl]);
-
-  const onChangeURL = (link: string) => {
-    setWebsite((prevState) => ({
-      ...prevState,
-      link,
-    }));
+  const handleSubmit = (event: { preventDefault: () => void }) => {
+    event.preventDefault();
+    onSubmit();
   };
 
-  const validateWeb = () => {
-    const isValid = validateUrl(website.link);
-    setWebsite((prevState) => ({
-      ...prevState,
-      isValid,
-    }));
-    if (isValid) {
-      /*navigate({
-        pathname: "/analizar",
-        search: `${createSearchParams({
-          url: website.link,
-        })}`,
-      });*/
-      return;
-    }
-  };
   return (
     <section className="w-5/6 lg:max-w-96 m-auto mt-7">
-      <form onSubmit={validateWeb}>
+      <form onSubmit={handleSubmit}>
         <label
           htmlFor="url"
           className="block text-lg font-medium leading-6 text-gray-900"
@@ -60,9 +30,11 @@ const InputTest = ({ pageUrl, errorMessage }: InputTestProps) => {
           />
         </div>
         {!website.isValid && <ErrorMessage label={"Url inválida"} />}
-        {errorMessage && <ErrorMessage label={errorMessage} />}
         <div className="w-full mt-6">
-          <button className="bg-[--primary-green] border-2 duration-300 text-white p-5 rounded-md text-lg font-bold hover:bg-transparent hover:text-[--primary-green] hover:border-[--primary-green] ">
+          <button
+            type="submit"
+            className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow"
+          >
             Analizar
           </button>
         </div>

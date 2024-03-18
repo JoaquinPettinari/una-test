@@ -1,32 +1,31 @@
 import "./AnalyzePage.css";
-import InputTest from "../InputTest/InputTest";
 import Resume from "./Resume";
-import { useAnalyzePage } from "../../hooks/useAnalyzePage";
 import PageResults from "./PageResults";
+import DocSection from "../DocSection/DocSection";
+import { useContext } from "react";
+import { AnalizeContext } from "../../Context";
 
 export default function AnalyzePage() {
-  const { loading, pa11yResults } = useAnalyzePage();
-
+  const { loading, pa11yResults } = useContext(AnalizeContext);
   return (
-    <div className="h-full flex flex-col">
-      <div className={`overlay ${!loading && "none"}`}>
-        <div className={"loader"} />
-      </div>
-      <div className={`w-full ${loading && "none"}`}>
-        <div className="bg-gray-200 p-8">
-          <InputTest
-            pageUrl={pa11yResults.data.pageUrl}
-            errorMessage={pa11yResults.error}
-          />
-          {pa11yResults.ok && (
-            <Resume
-              isAccessible={pa11yResults.accessible}
-              countAprovedIssues={pa11yResults.countAprovedIssues}
-            />
-          )}
+    <main className="p-5">
+      <DocSection />
+      <section className="h-full flex flex-col">
+        <div className={`overlay ${!loading && "none"}`}>
+          <div className={"loader"} />
         </div>
-        <PageResults pa11yResults={pa11yResults} />
-      </div>
-    </div>
+        <div className={`w-full ${loading && "none"}`}>
+          <header className="bg-gray-200 p-8">
+            {pa11yResults.ok && (
+              <Resume
+                isAccessible={pa11yResults.accessible}
+                countAprovedIssues={pa11yResults.countAprovedIssues}
+              />
+            )}
+          </header>
+          <PageResults pa11yResults={pa11yResults} />
+        </div>
+      </section>
+    </main>
   );
 }

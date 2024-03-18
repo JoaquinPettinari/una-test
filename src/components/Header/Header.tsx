@@ -1,4 +1,5 @@
 import UnahurLogo from "../../assets/iso_unahur.png";
+import InputTest from "../InputTest/InputTest";
 
 const Header = () => {
   return (
@@ -10,6 +11,7 @@ const Header = () => {
       <h1 className="mt-3 text-2xl text-gray-600">
         Herramienta para analizar accesibilidad de sitios web
       </h1>
+      <InputTest />
     </header>
   );
 };
