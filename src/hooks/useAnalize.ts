@@ -5,6 +5,7 @@ import { Pa11y, defaultResponse, fetchPa11yApi } from "../utils/api";
 function useAnalize() {
   const [pa11yResults, setPa11yResults] = useState<Pa11y>(defaultResponse);
   const [loading, setLoading] = useState(false);
+  const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [website, setWebsite] = useState({
     link: "",
     isValid: true,
@@ -37,7 +38,15 @@ function useAnalize() {
 
   const getPa11yData = async (url: string) => {
     try {
-      const response = await fetchPa11yApi(url);
+      let text: string | ArrayBuffer | null | undefined;
+      const reader = new FileReader();
+      reader.onload = async (e) => {
+        text = e?.target?.result;
+      };
+      if (selectedFile) {
+        reader.readAsText(selectedFile as Blob);
+      }
+      const response = await fetchPa11yApi({ url, actions: text });
       setPa11yResults(response);
     } catch (error) {
       console.error("Error fetching data:", error);
@@ -51,6 +60,8 @@ function useAnalize() {
     website,
     loading,
     pa11yResults,
+    selectedFile,
+    setSelectedFile,
   };
 }
 

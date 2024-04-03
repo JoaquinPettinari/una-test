@@ -11,6 +11,8 @@ const defaultValue = {
   onSubmit: () => {},
   loading: false,
   pa11yResults: defaultResponse,
+  selectedFile: {} as File | null,
+  setSelectedFile: (_: File | null) => {},
 };
 
 export const AnalizeContext = createContext(defaultValue);

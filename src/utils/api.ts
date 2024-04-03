@@ -31,6 +31,11 @@ interface IssueType {
   notice: number;
 }
 
+interface FetchApiParams {
+  url: string;
+  actions: string | ArrayBuffer | null | undefined;
+}
+
 export const defaultResponse: Pa11y = {
   data: { documentTitle: "", pageUrl: "", issues: [] },
   ok: false,
@@ -40,7 +45,10 @@ export const defaultResponse: Pa11y = {
   error: "",
 };
 
-export const fetchPa11yApi = async (url: string): Promise<Pa11y> => {
+export const fetchPa11yApi = async ({
+  url,
+  actions,
+}: FetchApiParams): Promise<Pa11y> => {
   const isTesting = import.meta.env.DEV;
   const useMock = import.meta.env.VITE_USE_MOCK;
 
@@ -54,7 +62,7 @@ export const fetchPa11yApi = async (url: string): Promise<Pa11y> => {
         "Content-Type": "application/json",
         "Access-Control-Allow-Origin": "*",
       },
-      body: JSON.stringify({ url }),
+      body: JSON.stringify({ url, actions }),
     });
 
     const results: Pa11y = await response.json();
