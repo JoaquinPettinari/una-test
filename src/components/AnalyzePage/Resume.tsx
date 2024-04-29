@@ -50,6 +50,7 @@ function Resume({ isAccessible, countAprovedIssues }: ResumeProps) {
   return (
     <div
       className={`max-w-3xl flex m-auto mt-9 bg-gray-100 rounded-xl p-7 ${accessibilityVariables.class}`}
+      data-testid="cypress-resume"
     >
       <img
         src={accessibilityVariables.icon}

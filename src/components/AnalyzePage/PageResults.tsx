@@ -37,7 +37,7 @@ function PageResults({ pa11yResults }: PageResultsProps) {
           <IssueResumeCard {...props} key={index} onClickCard={onClickCard} />
         ))}
       </div>
-      <div className="w-full flex flex-col mt-10">
+      <div className="w-full flex flex-col mt-10" data-testid="cypress-issues">
         {issues.map((issue, index) => {
           const border = colors[issue.type].border;
           return <Issue border={border} issue={issue} key={index} />;

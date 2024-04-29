@@ -36,6 +36,7 @@ const InputTest = () => {
         <div className="relative mt-2 rounded-md shadow-sm">
           <input
             type="text"
+            data-testid="cypress-input-test"
             name="url"
             value={website.link}
             onChange={(event) => onChangeURL(event.target.value)}
