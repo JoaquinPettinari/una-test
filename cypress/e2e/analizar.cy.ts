@@ -10,7 +10,7 @@ describe("Análisis de la página", () => {
 
   it("Prueba del resultado. Es accesible o no?", () => {
     // Verifica si existe el componente que muestra el resultado.
-    cy.get('[data-testid="cypress-resume"').should("exist");
+    cy.get('[data-testid="cypress-resume"]').should("exist");
     // Valida si contiene la cantidad de errores esperados, según el texto
     cy.contains("Se cumplieron 33 criterios de un mínimo de 30");
     cy.contains("Accesible");
@@ -18,7 +18,7 @@ describe("Análisis de la página", () => {
 
   it("Prueba listado de errores", () => {
     // Verifica si existe el componente del listado de errores
-    cy.get('[data-testid="cypress-issues"').should("exist");
+    cy.get('[data-testid="cypress-issues"]').should("exist");
     // Comprobacion de los errores esperados
     cy.contains("WCAG2AA.Principle3.Guideline3_1.3_1_1.H57.2");
     cy.contains("WCAG2AA.Principle1.Guideline1_1.1_1_1.H37");
