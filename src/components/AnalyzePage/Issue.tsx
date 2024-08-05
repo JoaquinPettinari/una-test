@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { Issue as IssueType } from "../../utils/api";
 
 interface IssueProps {
@@ -6,12 +6,24 @@ interface IssueProps {
   border: string;
 }
 
+const principlesName: { [key: number]: string } = {
+  1: "Perceptible",
+  2: "Operable",
+  3: "Comprensible",
+  4: "Robusto",
+};
+
 function Issue({ issue, border }: IssueProps) {
   const [isExpanded, setIsExpanded] = useState(false);
 
   const toggleAccordion = () => {
     setIsExpanded(!isExpanded);
   };
+
+  const principle = useMemo(() => {
+    return issue.parsedPrinciple;
+  }, [issue.parsedPrinciple]);
+
   return (
     <article
       className={`border-2 rounded-md mb-4 p-4 bg-white text-start shadow-lg ${border}`}
@@ -23,10 +35,19 @@ function Issue({ issue, border }: IssueProps) {
       <hr />
       <div className="mt-3 text-gray-500">
         <h5 className="overflow-hidden text-ellipsis">{issue.context}</h5>
-        <br />
-        <h5>{issue.code}</h5>
+        <ul>
+          <li>
+            Principio:{" "}
+            {`${issue.parsedPrinciple?.principio} (${
+              issue.parsedPrinciple?.principio
+                ? principlesName[principle?.principio ?? "0"]
+                : 0
+            })`}
+          </li>
+          <li>Pauta: {issue.parsedPrinciple?.pauta}</li>
+          <li>Criterio: {issue.parsedPrinciple?.criterio}</li>
+        </ul>
       </div>
-      <br />
       <div className="w-full">
         <div className="overflow-hidden">
           <div

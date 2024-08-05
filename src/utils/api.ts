@@ -22,6 +22,7 @@ export interface Issue {
   selector: string;
   runner: string;
   runnerExtras: unknown;
+  parsedPrinciple?: { criterio: string, pauta: number, principio: number}
   guideLinks: string[];
 }
 
